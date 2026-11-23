@@ -1,0 +1,152 @@
+id,sosa,nom_naissance,prenoms,sexe,gedcom_id,dans_arbre,note
+P5184,1,DUBART,"Edouard Jean ""René""",M,I5184,oui,
+P5187,,LEBLANC,"Luce ""Renée""",F,I5187,oui,
+P5227,2,DUBART,Léon,M,I5227,oui,
+P5229,3,BARON MARCHAL,Jeanne Augustine,F,I5229,oui,
+P5232,4,DUBART,Edmond,M,I5232,oui,
+P5234,5,RIGNAULT,Marie Félicie,F,I5234,oui,
+P5241,,GASNIER,Solange,F,I5241,oui,
+P5761,8,DUBART,Louis Charles Ambroise,M,I5761,oui,
+P5762,,DUBART,Charles Alfred,M,I5762,oui,
+P5764,10,RIGNAULT,Jean Louis Alexandre,M,I5764,oui,
+P5767,11,BOSSE,Adèle Félicie,F,I5767,oui,
+P7058,20,RIGNAULT,Alexandre,M,I7058,oui,
+P7060,21,LEPINOIS OU LEPINOY,Marie Anne Rosalie,F,I7060,oui,
+P7062,22,BOSSE,Felix Hippolyte,M,I7062,oui,
+P7065,23,GINDRE,Marie Josephine,F,I7065,oui,
+P7411,9,GIBERT,Marie Octavie,F,I7411,oui,
+P8800,18,GIBERT,Marin François,M,I8800,oui,
+P8802,19,FOUCAMPREZ,Marie Catherine,F,I8802,oui,
+P8808,,GIBERT,Camille Melchior,M,I8808,oui,
+P8810,,DUBART,Marie Françoise Thais,F,I8810,oui,
+P9223,16,DUBART,"Jean ""Alexandre""",M,I9223,oui,
+P9225,17,SALLART,Marie Josephine,F,I9225,oui,
+P9232,,SALLE,Euchariste Eugène,M,I9232,oui,
+P10520,,DURSON,Florent Magloire,M,I10520,oui,
+P10554,,BRUGNON,Jean Auguste,M,I10554,oui,
+P11866,29,BAJOT,Marie Barbe,F,I11866,oui,
+P11879,30,BARON,Jean Pierre,M,I11879,oui,
+P11884,31,JAFFREDO,Louise Guillemette,F,I11884,oui,
+P11900,15,BARON,Prudence,F,I11900,oui,
+P11935,14,MARCHAL,Nicolas,M,I11935,oui,
+P11949,28,MARCHAL,Jean,M,I11949,oui,
+P13354,7,MARCHAL,Augustine,F,I13354,oui,
+P20190,,DEMILLY,Léon,M,I20190,oui,
+P25974,,FAUQUET,Félix,M,I25974,oui,
+P26473,,CHERRIER,Juliette,F,I26473,oui,
+P30957,,RIGNAULT,François,M,I30957,oui,
+P30961,,RIGNAULT,Anne,F,I30961,oui,
+P31221,,CANARD,Edouard,M,I31221,oui,
+P31222,,LEMOAL,Louis,M,I31222,oui,
+PR0032,32,DUBART,Jean,M,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : 1722< 1791
+PR0033,33,LEMAIRE,Marie Magdeleine,F,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : 17261767
+PR0034,34,SALLART ou SALART,Jean-Baptiste Firmin,M,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : ~ 1721< 1782
+PR0035,35,DAILLE ou DAIL,Marie Françoise,F,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : ~ 1737> 1784
+PR0036,36,GIBERT,François,M,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : 1712
+PR0037,37,DOLHAIN,Marie,F,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : 
+PR0040,40,RIGNAULT,Alexandre,M,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : (c) 17461816
+PR0041,41,NAVARRE,Jacquette,F,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : (c) 17471825
+PR0042,42,LEPINOIS,Pierre,M,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : ~ 1752
+PR0043,43,TROUSSELLE,Marie Anne Rosalie,F,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : (c) 1754
+PR0044,44,BOSSE,Barthélémy Hippolyte,M,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : 17491794
+PR0045,45,MAHIEU ou MASSIEU ou MALRIEU,Adelaïde Louise,F,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : > 1795
+PR0046,46,GINDRE,Alexis,M,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : ~ 17721810
+PR0047,47,DIEU,Marie Marcelle,F,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : (c) 17631827
+PR0056,56,MARCHAL,Jacques,M,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : (c) 17301795
+PR0057,57,MAGNIEN,Rosalie,F,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : > 1795
+PR0058,58,BAJOT,François,M,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : < 1794
+PR0059,59,CHARPENTIER,Marie,F,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : > 1794
+PR0060,60,BARON,Joseph Joachim,M,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : 17591803
+PR0061,61,GUILLOTIN,Marie,F,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : 17481794
+PR0062,62,JAFFREDO,Mathurin,M,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : (c) 17631805
+PR0063,63,SIVIEN,"Marie ""Louise""",F,,non,Cité seulement par le rapport Heredis (sources/ascendance.txt) ; dates du rapport : (c) 17611819
+PN0001,,MARCHAL,Anne Louise Angélique,F,,non,"Dite Anaïs. Sœur d'Augustine (Sosa 7). Mère adoptive de Jeanne Augustine (Sosa 3). Absente de l'export GEDCOM, citée dans le rapport Heredis."
+PN0002,,ORSAY,Louis Edouard,M,,non,Époux d'Anaïs MARCHAL. Chef de bureau au chemin de fer d'Orléans.
+PN0003,,DUBART,Marcel Jean,M,,non,"Frère de Léon (Sosa 2). Cité dans le rapport Heredis, absent de l'export GEDCOM. Fils d'Edmond DUBART et de Marie Félicie RIGNAULT d'après son acte de décès (A0724) ; né le 14/09/1876 au 16e (A0021, A0723)."
+PN0004,,FONTBONNE,Anne,F,,non,"Sage-femme (accoucheuse) à Clermont-Ferrand, veuve Chassaigne en 1873."
+PN0005,,CHASSAIGNE,Annet-Auguste,M,,non,Mari d'Anne Fontbonne.
+PN0006,,RIGNAULT,François Emile,M,,non,Frère de Jean Louis Alexandre Rignault (Sosa 10).
+PN0007,,PASSY,Louis Paulin,M,,non,"Ami de J. L. A. Rignault, chez qui celui-ci meurt à Gisors."
+PN0008,,BARON,Anne,F,,non,Mère DÉCLARÉE de Jeanne Augustine dans l'acte de 1873. Identité possiblement fictive : ne pas fusionner avec une personne réelle sans preuve (voir identifications).
+PN0009,,DUBART,Marie Josèphe Charlotte Alexandrine,F,,non,"Enfant de Jean Alexandre DUBART (Sosa 16) et Josephine SALLART (Sosa 17), né(e) au Quesnel ; acte lu (AD80 5MI_D579)."
+PN0010,,DUBART,Marie Charlotte Colombe,F,,non,"Enfant de Jean Alexandre DUBART (Sosa 16) et Josephine SALLART (Sosa 17), né(e) au Quesnel ; acte lu (AD80 5MI_D579)."
+PN0011,,DUBART,Charles Alexandre Eloi,M,,non,"Enfant de Jean Alexandre DUBART (Sosa 16) et Josephine SALLART (Sosa 17), né(e) au Quesnel ; acte lu (AD80 5MI_D579)."
+PN0012,,LE FORT,Jean-Baptiste Barthélémy,M,,non,Seigneur du Quesnel selon un forum local (non vérifié) ; serait mort en 1767.
+PN0013,,LE FORT,Marie Charlotte Ursule,F,,non,"« Le Fort du Quesnel », née en 1782, épouse Louis-Alexandre Blin de Bourdon le 29/12/1805 selon Wikipédia (le forum local disait 1806). Identité avec la témoin Marie Charlotte Ursule Le Fort (22 ans en 1804) probable, non établie par un acte."
+PN0014,,BLIN DE BOURDON,Louis-Alexandre,M,,non,Vicomte ; époux de Marie Charlotte Le Fort en 1806 selon un forum local (non vérifié).
+PN0015,,DUBART,Antoine,M,,non,"Marchand au Quesnel, témoin en l'an VIII (A0148). Lien avec Jean Alexandre inconnu."
+PN0016,,LE FORT,Marie Jean-Baptiste Charles François Léonor Augustin,M,,non,Seigneur du Quesnel ; contrat de mariage avec M.-C.-A. Dufresne inscrit en 1781 (inventaire B 165) ; maire 1801-1805 et 1808-1810 selon Geneawiki.
+PN0017,,DUFRESNE,Marie Charlotte Alexandrine,F,,non,"Épouse de Léonor Augustin Le Fort (contrat inscrit en 1781, inventaire B 165)."
+PN0018,,DE HÉE [?],Marguerite Léonore,F,,non,"Veuve de Jean-Baptiste-Barthélemy-François Lefort, dame du Hamel en 1771-1774 (inventaire 1 B 45) ; nom incertain dans l'inventaire."
+PN0019,,LE FORT,Louis,M,,non,"Chevalier, seigneur du Hamel et de Frémanoir, au château du Hamel en 1784-1785 (inventaire 1 B 47)."
+PN0020,,DUBART,Jean,M,,non,"Baptisé à Elincourt-Sainte-Marguerite un 25 décembre (année non lue), fils de Charles Dubar et Catherine Molin (A0262). Identification avec le cordonnier inhumé en 1756 : hypothèse A0270, non établie. Créée le 2026-11-02 (intégration famille Robert)."
+PN0021,,DUBART,Jean,M,,non,"Cordonnier, inhumé à Elincourt-Sainte-Marguerite le 15/09/1756, environ 70 ans (A0265-A0268). Identification avec le Jean Dubart clerc père de Jean Alexandre : hypothèse A0278, non établie. Créée le 2026-11-02 (intégration famille Robert)."
+PN0022,,MOLIEN,Pierre,M,,non,"Jardinier, dit gendre du défunt Jean Dubart à l'inhumation de 1756 (A0269). Créée le 2026-11-02 (intégration famille Robert)."
+PN0023,,DURSON,Alphonse,M,,non,"Charpentier, 39 ans, domicilié à Moreuil, dit fils de Marie Charlotte Dubart épouse Durson en 1859 (A0291). Créée le 2026-11-02 (intégration famille Robert)."
+PN0024,,ORSAY,[prénom non donné],F,,non,"« Madame veuve ORSAY » expéditrice du faire-part de 1918 (A0374). Identité avec Anne Louise Angélique Marchal (PN0001, veuve Orsay-Marchal en 1922) possible mais non établie. Créée le 2026-11-02 (intégration famille Robert)."
+PN0025,,RIGNAULT,Eugène,M,,non,Nommé frère de Marie Félicie Rignault dans le faire-part de 1918 (A0372). Identification avec Eugène Émile Rignault de Marseille : hypothèse A0481. Créée le 2026-11-02 (intégration famille Robert).
+PN0026,,DUBART,Maurice,M,,non,Nommé neveu de Marie Félicie Rignault dans le faire-part de 1918 (A0373). Identification avec Maurice Charles Dubart : hypothèse A0477. Créée le 2026-11-02 (intégration famille Robert).
+PN0027,,CINOT [?],Mathilde Emilie,F,,non,"Épouse de Charles Dubart (P5762) en 1890, 59 ans, sans profession (A0378) ; nom à relire. Créée le 2026-11-02 (intégration famille Robert)."
+PN0028,,DUBART,Charles,M,,non,"28 ans, employé, rue Dulong 41, déclarant du décès de Charles Dubart (1890) comme fils (A0379). Créée le 2026-11-02 (intégration famille Robert)."
+PN0029,,CASTERAN [?],Jules,M,,non,"53 ans, propriétaire, second témoin de la déclaration de naissance de René (1900) (A0407) ; nom à relire. Créée le 2026-11-02 (intégration famille Robert)."
+PN0030,,LEBLANC,Louis Auguste,M,,non,Né le 25/08/1876 à Connantre ; limonadier à Châlons-sur-Marne en 1901 ; père de Luce Renée Leblanc (A0420-A0423). Créée le 2026-11-02 (intégration famille Robert).
+PN0031,,BELLOY,Marguerite Elisabeth Marie Eléonore,F,,non,"Née le 20/08/1882 au Mesnil-sur-Oger ; épouse de Louis Auguste Leblanc (mariage 09/05/1900) ; mère de Luce Renée Leblanc (A0420, A0427). Créée le 2026-11-02 (intégration famille Robert)."
+PN0032,,LEBLANC,Germain Alcidalis,M,,non,"Bonnetier [lecture probable] à Connantre en 1900, père de Louis Auguste Leblanc (A0424-A0425). Créée le 2026-11-02 (intégration famille Robert)."
+PN0033,,OUDOT,Hortense Appoline,F,,non,"Mère de Louis Auguste Leblanc, domiciliée à Connantre en 1900 ; épouse de Germain Alcidalis Leblanc (A0424). Créée le 2026-11-02 (intégration famille Robert)."
+PN0034,,BELLOY,Auguste Alfred,M,,non,"Propriétaire à Jandun (Ardennes) en 1900, père de Marguerite Belloy, divorcé de Louise Adèle Charlemagne (A0428-A0429). Identification avec l'Auguste Belloy né en 1853 : hypothèse A0448. Créée le 2026-11-02 (intégration famille Robert)."
+PN0035,,CHARLEMAGNE,Louise Adèle,F,,non,"Mère de Marguerite Belloy, divorcée d'Auguste Alfred Belloy ; « Adèle Charlemagne, belle-mère » au dénombrement de Châlons de 1901 (A0428, A0438-A0439). Créée le 2026-11-02 (intégration famille Robert)."
+PN0036,,CHARLEMAGNE,Clovis,M,,non,"Rentier, Le Mesnil-sur-Oger, témoin du mariage de 1900 comme aïeul maternel de l'épouse (A0433). Créée le 2026-11-02 (intégration famille Robert)."
+PN0037,,CHARLEMAGNE,Gustave,M,,non,"30 ans, propriétaire, Le Mesnil-sur-Oger, témoin du mariage de 1900 comme oncle maternel de l'épouse (A0434). Créée le 2026-11-02 (intégration famille Robert)."
+PN0038,,LEBLANC,Louis Aristide,M,,non,"49 ans, cultivateur à Compertrix, témoin du mariage de 1900 comme oncle paternel de l'époux (A0435). Créée le 2026-11-02 (intégration famille Robert)."
+PN0039,,ISOUX [?],Joseph,M,,non,"57 ans, matelassier à Paris, témoin du mariage de 1900 comme oncle maternel de l'époux (A0436) ; nom à relire. Créée le 2026-11-02 (intégration famille Robert)."
+PN0040,,MARY,Charles,M,,non,"40 ans, inscrit à la suite du ménage Leblanc au dénombrement de Châlons de 1901 (A0440). Créée le 2026-11-02 (intégration famille Robert)."
+PN0041,,BILGER,Eugène,M,,non,"17 ans, « garçon limonadier », inscrit à la suite du ménage Leblanc au dénombrement de Châlons de 1901 (A0440). Créée le 2026-11-02 (intégration famille Robert)."
+PN0042,,GOBILLARD,Louise,F,,non,Inscrite à la suite du ménage Leblanc au dénombrement de Châlons de 1901 (A0440). Créée le 2026-11-02 (intégration famille Robert).
+PN0043,,BELLOY,Auguste,M,,non,"Né le 13/10/1853 à Lafrancheville (Ardennes), jardinier, classe 1873 (A0444-A0447). Identification avec Auguste Alfred Belloy : hypothèse A0448. Créée le 2026-11-02 (intégration famille Robert)."
+PN0044,,BELLOY,Jean-Baptiste,M,,non,"Dit père de l'Auguste Belloy né en 1853 (feuille matricule, A0445). Créée le 2026-11-02 (intégration famille Robert)."
+PN0045,,GOUTANT,Marie Esther,F,,non,"Dite mère de l'Auguste Belloy né en 1853 (feuille matricule, A0445). Créée le 2026-11-02 (intégration famille Robert)."
+PN0046,,GASNIER,Alfred,M,,non,"Père de Solange Gasnier, décédé avant 1923 (A0461). Créée le 2026-11-02 (intégration famille Robert)."
+PN0047,,MINOIS,Solange,F,,non,"Mère de Solange Gasnier, décédée avant 1923 (A0461). Créée le 2026-11-02 (intégration famille Robert)."
+PN0048,,LAFORGUE,Jean Baptiste,M,,non,"Premier époux de Solange Gasnier, mort le 27/05/1908 d'après l'acte de 1923 (A0462). Créée le 2026-11-02 (intégration famille Robert)."
+PN0049,,BOCAHUT,Léonce,M,,non,Témoin du mariage de Léon Dubart et Solange Gasnier (1923) (A0464). Créée le 2026-11-02 (intégration famille Robert).
+PN0050,,LEBLANC,Louis,M,,non,"Représentant, décoré de la Croix de Guerre, Vincennes, témoin du mariage de 1923 (A0464). Identification avec Louis Auguste Leblanc : hypothèse A0465. Créée le 2026-11-02 (intégration famille Robert)."
+PN0051,,DUBART,Annie Marguerite Jeannine,F,,non,"Née le 09/12/1930 à Neuilly-sur-Seine, fille de René Dubart et Luce Renée Leblanc ; décédée le 04/03/1998 (A0470-A0475). Créée le 2026-11-02 (intégration famille Robert)."
+PN0052,,personne privée,,M,,non,
+PN0053,,DUBART,Lucien Charles André,M,,non,"Né le 15/12/1890 à Paris 17e, sergent, tué à l'ennemi le 16/04/1917 à Juvincourt (A0476). Créée le 2026-11-02 (intégration famille Robert)."
+PN0054,,DUBART,Maurice Charles,M,,non,"Père de Lucien, domicilié à Charenton en 1917 ; serait un fils de Charles Dubart (1829-1890) : hypothèse A0477. Créée le 2026-11-02 (intégration famille Robert)."
+PN0055,,RIGNAULT,André Émile François,M,,non,"Né le 02/02/1886 en Saône-et-Loire, fils d'Eugène Émile Rignault (A0478). Créée le 2026-11-02 (intégration famille Robert)."
+PN0056,,RIGNAULT,Eugène Émile,M,,non,Père d'André Émile François Rignault (A0478) ; identifications avec les autres Eugène Rignault : hypothèses A0480-A0481. Créée le 2026-11-02 (intégration famille Robert).
+PN0057,,RIGNAULT,Eugène,M,,non,"Eugène Rignault décédé avant avril 1929 (avis de Marseille, A0479) ; identification avec Eugène Émile : hypothèse A0480. Créée le 2026-11-02 (intégration famille Robert)."
+PN0058,,DUBAR,Charles,M,,non,"Père de Jean, baptisé à Elincourt-Sainte-Marguerite un 25 décembre ; nom écrit « Dubar » dans l'acte (A0262). Rapport avec les Dubart non établi. Créée le 2026-11-02 (intégration famille Robert)."
+PN0059,,MOLIN,Catherine,F,,non,"Dite femme de Charles Dubar, mère de Jean baptisé à Elincourt (A0262). Créée le 2026-11-02 (intégration famille Robert)."
+PN0060,,MARCHAL,Eugène,M,,non,"56 ans, sans profession, Vichy, témoin du mariage Orsay-Marchal de 1896 (A0340). Lien de parenté non indiqué dans l'énoncé. Créée le 2026-11-02 (intégration famille Robert)."
+PN0061,,DUBART,"(Madame, prénom inconnu)",F,,non,"« Madame Dubart, professeur de chant », élève de Banderali, citée dans la presse musicale parisienne 1839-1848 (A0492-A0496). Prénom, état civil, mari et adresse inconnus. Identification avec Marie Octavie Gibert (P7411) = hypothèse faible, non résolue : NON fusionnée (R03). Créée le 2026-11-02."
+PN0062,,DUBART,"(pharmacien, prénom inconnu)",,,non,"Pharmacien « Dubart », rue de Bondy 32 (Almanach des lettres et des arts, 1850) : homonyme écarté, aucun lien établi avec la famille. Créée le 2026-11-02."
+PN0063,,BANDERALI,David,M,,non,"Professeur de chant (Almanach royal 1829 : rue Neuve-d'Artois 31 ; nécrologie de la Revue et gazette musicale, 17/06/1849). Professeur déclaré de « Madame Dubart » (PN0061) par Le Ménestrel, 1841. Contexte seulement ; dates de naissance divergentes (1780 ou 1789). Créée le 2026-11-03."
+PN0064,,GIBERT,"(homonymes masculins musiciens, prénoms inconnus)",M,,non,"Un M. Gibert chanteur à la Société philharmonique de Bordeaux (1842) et un clarinettiste Gibert (prix du Conservatoire 1857, 1859) : homonymes écartés, aucun lien avec la famille. Créée le 2026-11-03."
+PN0065,38,FOUCAMPREZ,Adrien,M,,non,Père de Marie Catherine Foucamprez (P8802) : baptême de Saint-Sulpice du 3/03/1771 (A0556). Créé le 2026-11-03.
+PN0066,39,COLIN,Catherine,F,,non,"Mère de Marie Catherine Foucamprez (P8802), épouse d'Adrien Foucamprez (A0556). Créée le 2026-11-03."
+PN0067,,FOUCAMPREZ,François Étienne Alexis,M,,non,Parrain de Marie Catherine Foucamprez en 1771 (A0558) ; parenté non dite (oncle ?). Créé le 2026-11-03.
+PN0068,,DETTOUS [?],Marie Madeleine,F,,non,"Marraine de Marie Catherine Foucamprez en 1771, épouse du parrain (A0558) ; nom de famille de lecture incertaine. Créée le 2026-11-03."
+PN0069,,CHAUVET,Joseph Pierre Bernard,M,,non,"Négociant, 38 ans, rue Poissonnière 21 : second déclarant du décès de Marie Catherine Foucamprez en 1827 (A0560) ; lien avec la famille non dit. Créé le 2026-11-03."
+PN0070,,GIBERT,Geneviève,F,,non,"Baptisée à Saint-Roch le 16/12/1744, fille de François Gibert, maître mercier, et de Marie-Jeanne Dolhain (A0571) ; sœur probable de François Marin Gibert (A0574). Créée le 2026-11-08."
+PN0071,,NEVEUX,Pierre,M,,non,"Marchand de vin, parrain de Geneviève Gibert en 1744 (A0573) ; lien avec la famille non dit. Créé le 2026-11-08."
+PN0072,,GODIER [?],Geneviève,F,,non,Marraine de Geneviève Gibert en 1744 (A0573) ; nom lu « Godier » puis « Gaudier » sur la même pièce ; lien avec la famille non dit. Créée le 2026-11-08.
+PN0073,,GIBERT,Jean Baptiste,M,,non,"Caissier des remises et envois d'argent pour la province (1787, A0670), « caissier des postes » (1790, A0611), demeurant à l'hôtel des Postes, rue Plâtrière (Saint-Eustache) ; oncle paternel des mineurs Gibert (1787 et 1790). Fils inféré de François Gibert et Marie Jeanne Dolhain (A0616). Créé le 2026-11-08."
+PN0074,,GIBERT,Paul César,M,,non,"Professeur de musique, officier de la chambre de Madame sœur du Roi, inspecteur de la manufacture royale de la Savonnerie « en survivance du sieur son père » (1787, A0668 ; 1790, A0602). Mort au plus tard le 12/10/1787 (A0604) ; époux de Marie Marguerite Dubois, père de Christine Geneviève, de Benoît Charles César et d'un enfant posthume (1787). Fils de François Gibert (1787, A0667) ; fils de Marie Jeanne Dolhain seulement par inférence (A0614, A0619). Aucune parenté établie avec la tradition familiale « professeur de chant » d'Octavie. Créé le 2026-11-08."
+PN0075,,GIBERT,Charles César,M,,non,"Visiteur général des postes et relais de France, rue Neuve-des-Petits-Champs (Saint-Roch), oncle paternel des mineurs Gibert (1787, A0669 ; 1790, A0610) ; prénom lu d'abord « Lazare » (F16), corrigé en « César » (F29). Probablement le « M. Gibert » visiteur général de l'Almanach royal 1789 (A0618). Fils inféré de François Gibert et Marie Jeanne Dolhain (A0615). Créé le 2026-11-08."
+PN0076,,DUBOIS,Marie Marguerite,F,,non,"Veuve de Paul César Gibert, tutrice de leurs enfants mineurs (1787, A0664 ; 1790, A0605) ; demeure à Monceaux près Paris (Clichy) en 1787. Nom lu « Rabis » en 1790 (F16), corrigé en « Dubois » (écrit en 1787, signature « M. M. Dubois »). Ni naissance ni parents connus. Créée le 2026-11-08."
+PN0077,,GIBERT,Benoît Charles César,M,,non,"Mineur de 8 ans le 12/10/1787 (né vers 1779, A0661), fils de feu Paul César Gibert et de Marie Marguerite Dubois (A0601) ; toujours mineur le 22/06/1790 (« Mousseaux lès Paris », index). Prénoms lus d'abord « Benoit [?] Charles César » (F16). Créé le 2026-11-08."
+PN0078,,GIBERT,Christine Geneviève,F,,non,"Mineure de 10 ans le 12/10/1787 (née vers 1777, A0661), fille de feu Paul César Gibert et de Marie Marguerite Dubois (A0601) ; toujours mineure le 22/06/1790 (« Mousseaux lès Paris », index). Prénoms lus à tort « Célestin [?] Germain [?] » (F16), sexe M à tort : corrigés (F29, F30). Peut-être la Genevieve Christine Gibert mariée à Jean Baptiste Louis Danini en 1793 (I0008, candidate). Créée le 2026-11-08."
+PN0079,,GIBERT,Louis Armand,M,,non,"Marchand orfèvre, quai des Orfèvres (paroisse Saint-Barthélemy), « oncle à la mode de Bretagne » des mineurs Gibert à l'avis de parents du 12/10/1787 (A0671) ; lien exact avec François Gibert non dit. Créé le 2026-11-09."
+PN0080,,BRON,Benoît,M,,non,"« Directeur général du Département des Postes [?] », hôtel des Postes, rue Plâtrière (Saint-Eustache) ; ami comparant à l'avis de parents Gibert du 12/10/1787 (A0672). Créé le 2026-11-09."
+PN0081,,MITOIRE,Charles,M,,non,"Visiteur des Postes, rue Plâtrière (Saint-Eustache) ; ami comparant à l'avis de parents Gibert du 12/10/1787 (A0672). Créé le 2026-11-09."
+PN0082,,FÉGUIN,Estienne,M,,non,"Maître apothicaire à Paris, rue Saint-Honoré (Saint-Roch) ; ami comparant à l'avis de parents Gibert du 12/10/1787 (A0672). Créé le 2026-11-09."
+PN0083,,DANINI,Jean Baptiste Louis,M,,non,Cité comme époux de Genevieve Christine Gibert dans le répertoire du notaire Billard le 05/09/1793 (A0676) ; rien d'autre. Créé le 2026-11-09.
+PN0084,,GIBERT,Genevieve Christine,F,,non,"Épouse de Jean Baptiste Louis Danini d'après le répertoire du notaire Billard (05/09/1793, A0676) ; identité avec Christine Geneviève, fille de Paul César Gibert (PN0078), seulement candidate (I0008). Créé le 2026-11-09."
+PN0085,,DUBARD,Georges,M,,non,"Né à Paris 8e le 01/03/1873, rue Jean-Goujon 28, de père non dénommé et de Constance Dubard (A0735). Aucun lien établi avec Edmond Dubart. Créé le 2026-11-09."
+PN0086,,DUBARD,Constance,F,,non,"Couturière, 28 ans en 1873, rue Jean-Goujon 28 (8e), mère de Georges (A0735). Aucun lien de parenté établi avec les Dubart de l'enquête. Créée le 2026-11-09."
+PN0087,,RIGNAULT,Cécile Alexandrine,F,,non,"Fiche de naissance 22/04/1849 (V3E/N 1942) ; l'arbre en fait une fille de Jean Louis Alexandre Rignault et d'Adèle Félicie Bosse, décédée le 26/07/1852 (non vérifié). Créée le 2026-11-10."
+PN0088,,BOSSÉ,Hippolyte Félix,M,,non,"Fiche de décès du 09/06/1849, 6e arrondissement ancien (V3E/D 156). Identité avec Félix Hippolyte Bosse (P7062) non établie ; peut être une autre personne (parent ?). Créée le 2026-11-10."
+PN0089,,LEPINOY,Jean Édouard Amélie,M,,non,"Né à Paris le 16/07/1804 (27 messidor an XII), rue Saint-Benoît 9, de Marie Anne Rosalie Lepinois, père non nommé (A0785, A0788) ; cité par le rapport Heredis (sources/ascendance.txt) comme issu d'une « union antérieure » de P7060 (Conjoint non cité). Rattachement à P7060 : identification partiellement vérifiée (A0787). Fiche de décès « 12 octobre 18?? » non reliée avec certitude (A0790). Créée le 2026-11-11."
+PN0090,,DEVILLERS,Jean Baptiste Théodore,M,,non,"Tailleur, dit 66 ans et domicilié 3 rue des Petites-Écuries (même adresse que P7060), co-déclarant de son décès le 01/02/1862 (A0784). Aucun lien avec la famille établi. Créée le 2026-11-11."

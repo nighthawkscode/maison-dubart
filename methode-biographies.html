@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les règles des biographies · La Maison Dubart, l'enquête</title>
+<link rel="stylesheet" href="style.css">
+<!-- Page générée par outils/site.py depuis base/ : ne pas modifier à la main. -->
+</head>
+<body>
+<div class="haut"><div class="int"><a class="titre" href="index.html">La Maison Dubart · l'enquête</a><nav><a href="index.html">Accueil</a><a href="arbre.html">Arbre</a><a href="personnes/index.html">Personnes</a><a href="assertions.html">Assertions</a><a href="sources.html">Sources</a><a href="recherches.html">Recherches</a><a href="journal.html">Journal</a><a href="documents.html">Documents de famille</a><a href="transcriptions/index.html">Transcriptions</a><a href="methode.html" class=actif>Méthode</a><a href="donnees.html">Données</a></nav></div></div>
+<main class="texte">
+<p class='aide'><a href='methode.html'>La méthode</a> · docs/BIOGRAPHIES.md</p><h2 id="biographies-des-personnes-biographies-id-md">Biographies des personnes (biographies/&lt;id&gt;.md)</h2>
+<p>Chaque personne de la base a une biographie en prose, en tête de sa fiche (<code>fiches/&lt;id&gt;.md</code>, onglet « Biographie » de <code>dossier/arbre.html</code>). C&#x27;est une <strong>vue</strong> de la base, pas une source : la base fait foi.</p>
+<h3 id="ce-qu-on-attend-consigne-de-jessica-08-11-2026">Ce qu&#x27;on attend (consigne de Jessica, 08/11/2026)</h3>
+<p>La biographie <strong>raconte une vie</strong>, de façon fluide, et la replace <strong>dans son monde</strong>. Elle doit pouvoir se lire presque comme un roman, <strong>sans rien inventer ni extrapoler</strong> : uniquement des faits, mais bien racontés et remis dans leur contexte. Les détails (cotes, lectures, versions divergentes, raisonnements) sont dans les autres onglets de la fiche ; le lecteur qui les veut va les chercher là.</p>
+<p>Un relevé chronologique d&#x27;actes (« En 1866, il est employé… En 1868, il épouse… En 1869, il est employé… ») est un échec, même exact.</p>
+<h3 id="fichier">Fichier</h3>
+<ul><li>
+<code>biographies/&lt;id&gt;.md</code>, texte seul (pas de titre, pas d&#x27;en-tête : <code>outils/biographies.py --tamponner</code> ajoute l&#x27;en-tête avec la date et les assertions connues au moment de la rédaction).
+</li><li>
+La fiche signale automatiquement les assertions ajoutées depuis : c&#x27;est le signal pour réécrire la biographie.
+</li></ul>
+<h3 id="matiere-deux-sources-et-deux-seulement">Matière (deux sources, et deux seulement)</h3>
+<ol><li>
+<strong>La vie</strong> : la fiche de la personne (<code>fiches/&lt;id&gt;.md</code>) et, au besoin, celles des proches qu&#x27;elle cite. Ne pas ouvrir d&#x27;images.
+</li><li>
+<strong>Le monde</strong> : les notes de l&#x27;historien qui concernent la personne, sa lignée, son lieu ou son métier : <code>recherches/generation-N/&lt;lignée&gt;/contexte/*.md</code> (et <code>…/&lt;personne&gt;/contexte/</code>), ainsi que les vues historiques (<code>dossier/*-vue-historique.md</code>). <strong>Les lire toutes avant d&#x27;écrire</strong> : c&#x27;est là qu&#x27;est le contexte, et c&#x27;est lui qui manquait aux biographies.
+<ul><li>
+On n&#x27;y prend que ce qui est étiqueté sourcé ou « connaissance générale » ; jamais les passages « probablement vécu » ni les hypothèses de l&#x27;historien comme faits sur la personne.
+</li><li>
+En plus de ces notes, seuls sont permis les repères historiques que personne ne discute (le régime, une guerre, une épidémie datée, une transformation de Paris connue de tous), en une phrase, sans chiffre ni détail non sourcé.
+</li><li>
+Pour un ascendant direct (numéro Sosa) bien documenté qui n&#x27;a <strong>aucune</strong> note de contexte : ne pas combler de mémoire ; le signaler à la session principale, qui commande une note à l&#x27;historien (Sonnet) avant la réécriture.
+</li></ul>
+</li></ol>
+<h3 id="raconter">Raconter</h3>
+<ol><li>
+<strong>Un fil, pas une liste.</strong> Organiser la vie en quelques moments (l&#x27;enfance et la famille d&#x27;origine, l&#x27;installation, le mariage et les enfants, le travail, les deuils, la fin), avec des transitions qui disent ce qui change d&#x27;un moment à l&#x27;autre. Varier l&#x27;attaque des phrases ; ne pas commencer chaque phrase par une date.
+</li><li>
+<strong>Faire voir avec ce que disent les actes.</strong> Qui est présent aux grands moments (témoins, parrains, déclarants), qui signe, où l&#x27;on habite et ce que les déménagements dessinent, quel métier on déclare et comment il évolue : ce sont des faits, et ce sont eux qui donnent de la chair au récit. Une adresse ou un nom n&#x27;est donné que s&#x27;il dit quelque chose.
+</li><li>
+<strong>Le monde autour.</strong> À chaque moment de la vie, ce que les notes de l&#x27;historien disent du lieu, du métier, de la condition, de l&#x27;époque : ce qu&#x27;était être employé de banque sous le Second Empire, le quartier où l&#x27;on habite, la ville qu&#x27;on quitte. Le contexte s&#x27;écrit comme le cadre commun (« un employé de ce temps… », « le quartier est alors… »), jamais comme une expérience de la personne.
+</li><li>
+<strong>Les proportions.</strong> Le contexte sert la vie, il ne la remplace pas : il éclaire, en une ou deux phrases par moment, et ne devient jamais un exposé.
+</li></ol>
+<h3 id="ce-qu-on-n-ecrit-jamais-rien-d-invente-rien-d-extrapole">Ce qu&#x27;on n&#x27;écrit jamais (rien d&#x27;inventé, rien d&#x27;extrapolé)</h3>
+<ul><li>
+Ni date, ni lieu, ni métier, ni lien qui ne soient dans la fiche.
+</li><li>
+Ni sentiment, ni intention, ni pensée, ni scène imaginée. Interdits : « il a dû », « sans doute », « on l&#x27;imagine », « il a certainement vu », « le cœur lourd ».
+</li><li>
+Simultanéité n&#x27;est pas exposition : « en 1832, le choléra frappe Paris » peut se dire ; « il vit l&#x27;épidémie » ou « il la craint » non, sauf document. Voir les trois niveaux dans <code>.claude/agents/historien-contexte.md</code>.
+</li><li>
+Un silence des archives se dit (« on ne sait pas… »), il ne s&#x27;explique pas.
+</li><li>
+Pas de cuisine de recherche dans le récit : ni cotes, ni numéros d&#x27;étude, ni « la lecture X était erronée », ni « non numérisé », ni le détail des versions divergentes. Si une date est discutée, une demi-phrase suffit (« la date varie selon les actes ») ; le reste est dans Toutes les informations.
+</li></ul>
+<h3 id="dire-le-degre-de-certitude-sans-casser-le-recit">Dire le degré de certitude sans casser le récit</h3>
+<p>Le degré de certitude passe par les mots, une fois, à l&#x27;endroit où il compte, sans répéter la formule à chaque phrase :</p>
+<ul><li>
+<code>verifie</code> : affirmatif (« il naît… », « l&#x27;acte le dit… ») ;
+</li><li>
+<code>partiellement_verifie</code> : « d&#x27;après… », « semble » ;
+</li><li>
+<code>non_verifie</code> (arbre Heredis, AR…) : « selon l&#x27;arbre familial », une fois pour un passage qui en dépend entièrement ;
+</li><li>
+<code>contredit</code> / <code>non_resolu</code> : dire en peu de mots qu&#x27;il y a doute ;
+</li><li>
+hypothèse : « peut-être », jamais écrite comme un fait ; ne la mentionner que si elle porte une vraie question de la vie, sinon la laisser aux autres onglets.
+</li></ul>
+<h3 id="citations">Citations</h3>
+<p>Les assertions sont citées entre crochets <strong>en fin de paragraphe seulement</strong> (jamais au milieu d&#x27;une phrase), regroupées : <code>[A0160, A0162, AR0032]</code>. L&#x27;outil s&#x27;en sert pour signaler les citations inconnues ; elles doivent couvrir tous les faits du paragraphe.<br>Si le texte emprunte aux notes de l&#x27;historien, une dernière ligne en italique les nomme : <code>*Contexte : recherches/generation-4/dubart-gibert/contexte/rapport-historien.md.*</code></p>
+<h3 id="longueur">Longueur</h3>
+<p>Proportionnée à ce que l&#x27;on sait :</p>
+<ul><li>
+personne citée une ou deux fois (témoin, parent d&#x27;un allié) : 2 à 4 phrases, dont au plus une de contexte ;
+</li><li>
+ascendant ou proche documenté : 3 à 6 paragraphes courts.
+</li></ul>
+<p>Ne pas délayer : un récit fluide n&#x27;est pas un récit long.</p>
+<h3 id="completude-regle-intransigeante-03-11-2026">Complétude (règle intransigeante, 03/11/2026)</h3>
+<p>Tous les proches directs listés dans la section Famille de la fiche (parents, conjoints, enfants, frères et sœurs) sont nommés dans la biographie, avec le degré de certitude du lien, même quand on ne sait rien d&#x27;autre d&#x27;eux (« un frère, X, dont on ne sait rien après sa naissance »). Les intégrer au récit, pas en liste finale. La fiche fait foi, pas une vue historique ni l&#x27;ancienne biographie. <code>python3 -I outils/biographies.py --etat</code> liste les biographies incomplètes ; le hook de fin de tour les signale ; une biographie n&#x27;est tamponnée que si elle n&#x27;y figure pas.</p>
+<p>Fin : ce qui reste inconnu, en une phrase, si c&#x27;est utile au lecteur (pas la liste des recherches à faire, qui est dans Recherches menées).</p>
+<h3 id="exemple-de-ton-edmond-dubart-faits-de-sa-fiche-seulement">Exemple de ton (Edmond Dubart, faits de sa fiche seulement)</h3>
+<p>Relevé à éviter :</p>
+<blockquote>En juillet 1866, il est employé et demeure 104 rue du Faubourg-Poissonnière, chez son oncle et sa tante ; il déclare avec son cousin le décès de l&#x27;oncle. Le 9 juillet 1868, à la mairie du 9e, il épouse Marie Félicie Rignault…</blockquote>
+<p>Récit attendu (le contexte entre crochets vient d&#x27;une note de l&#x27;historien ; sans note, on s&#x27;en passe) :</p>
+<blockquote>À trente ans, Edmond vit chez son oncle et sa tante, faubourg Poissonnière, et c&#x27;est lui qui, avec son cousin, va déclarer la mort de l&#x27;oncle en 1866. Il est employé, [ce que signifiait ce mot dans la banque parisienne de ces années-là]. Deux ans plus tard, il épouse à la mairie du 9e Marie Félicie Rignault, vingt et un ans, fille d&#x27;un artiste musicien ; son père, veuf, qui vit avec lui, donne son consentement. [<a href="assertions.html#A0251">A0251</a>, <a href="assertions.html#A0252">A0252</a>, <a href="assertions.html#A0258">A0258</a>, <a href="assertions.html#A0259">A0259</a>]</blockquote>
+<h3 id="redaction-par-sous-agent-sonnet-et-relecture">Rédaction par sous-agent (Sonnet) et relecture</h3>
+<p>Le brief du sous-agent lui fait lire ce document, la fiche, les fiches des proches et <strong>toutes</strong> les notes de contexte pertinentes, et lui demande de rendre, à côté du texte, la liste des phrases de contexte avec la note d&#x27;où chacune vient.</p>
+<p>La session principale relit dans les deux sens : (a) chaque fait et chaque nuance correspondent à la fiche, chaque phrase de contexte à une note, rien n&#x27;est prêté à la personne ; (b) chaque proche direct et chaque fait clé de la fiche (naissance, mariage, décès, métiers, adresses significatives) se retrouvent dans le texte. Lancer <code>--etat</code> avant de tamponner.</p>
+</main>
+<footer>Site généré le 23/11/2026 depuis la base du projet, qui fait foi. Rien n'y est présenté comme un fait sans son statut : voir <a href="methode.html#lire">comment lire ce site</a>.</footer>
+
+</body>
+</html>

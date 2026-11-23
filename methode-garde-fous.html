@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les garde-fous · La Maison Dubart, l'enquête</title>
+<link rel="stylesheet" href="style.css">
+<!-- Page générée par outils/site.py depuis base/ : ne pas modifier à la main. -->
+</head>
+<body>
+<div class="haut"><div class="int"><a class="titre" href="index.html">La Maison Dubart · l'enquête</a><nav><a href="index.html">Accueil</a><a href="arbre.html">Arbre</a><a href="personnes/index.html">Personnes</a><a href="assertions.html">Assertions</a><a href="sources.html">Sources</a><a href="recherches.html">Recherches</a><a href="journal.html">Journal</a><a href="documents.html">Documents de famille</a><a href="transcriptions/index.html">Transcriptions</a><a href="methode.html" class=actif>Méthode</a><a href="donnees.html">Données</a></nav></div></div>
+<main class="texte">
+<p class='aide'><a href='methode.html'>La méthode</a> · docs/GARDE-FOUS.md</p><h2 id="socle-commun-de-garde-fous">Socle commun de garde-fous</h2>
+<p>Ce texte est repris tel quel dans les consignes de chaque agent (<code>.claude/agents/</code>). Les règles marquées d&#x27;un code (R02…) sont aussi vérifiées automatiquement par <code>outils/valider.py</code>.</p>
+<h3 id="principe">Principe</h3>
+<p>L&#x27;absence d&#x27;information est un résultat valide. Une recherche infructueuse est un résultat valide. Une question peut rester non résolue indéfiniment. « Je n&#x27;ai pas trouvé » ne veut pas dire « cela n&#x27;existe pas ».</p>
+<h3 id="interdits">Interdits</h3>
+<ol><li>
+Fabriquer une date, un lieu, une profession, un lien de parenté ou un événement pour compléter une fiche (R02).
+</li><li>
+Prétendre avoir consulté une source qu&#x27;on n&#x27;a pas ouverte. <strong>Un résumé de moteur de recherche n&#x27;est pas une consultation</strong> : la source est alors <code>non_consultee</code> (R05, R06).
+</li><li>
+Promouvoir une hypothèse au rang de fait parce qu&#x27;elle est probable ou rend le récit cohérent : on crée une nouvelle assertion de fait, avec sa preuve (R12).
+</li><li>
+Expliquer un silence des archives, ou prêter à une personne réelle des intentions, sentiments ou secrets sans document.
+</li><li>
+Présenter une simultanéité (un événement historique pendant sa vie) comme une exposition ou une cause (R12 : une inférence exige un raisonnement explicite).
+</li><li>
+Compter comme sources indépendantes des sites ou documents qui se recopient (<code>depend_de</code>, R04). L&#x27;arbre initial et ses copies ne sont jamais une preuve indépendante.
+</li><li>
+Utiliser la réponse d&#x27;un autre agent, ou un document de <code>dossier/</code>, comme preuve : ce sont des pistes (<code>synthese_agent</code>).
+</li><li>
+Masquer un résultat négatif, ou supprimer une ancienne conclusion : on la reclasse et on journalise (R07, R10).
+</li><li>
+Fusionner deux personnes sans identification justifiée (R03).
+</li></ol>
+<h3 id="obligations">Obligations</h3>
+<ul><li>
+Enregistrer chaque fait comme une <strong>assertion atomique</strong> dans <code>base/assertions.csv</code>, avec statut, nature, confiance justifiée, preuve(s), extrait si disponible, limite de la conclusion.
+</li><li>
+Enregistrer chaque <strong>recherche</strong> dans <code>base/recherches.csv</code>, qu&#x27;elle aboutisse ou non : ce qui a été cherché, les sources réellement consultées, le résultat, les pistes restantes.
+</li><li>
+Quand une information manque : dire précisément ce qui manque, ce qui a été cherché, où, avec quel résultat, les pistes restantes, et conclure « non établi ».
+</li><li>
+Lancer <code>python3 -I outils/valider.py</code> après toute écriture dans la base ; ne jamais laisser une erreur.
+</li></ul>
+<h3 id="statuts-base-assertions-csv-colonne-statut">Statuts (base/assertions.csv, colonne statut)</h3>
+<p><code>verifie</code> · <code>partiellement_verifie</code> · <code>non_verifie</code> · <code>contredit</code> · <code>refute</code> · <code>non_resolu</code> · <code>non_recherche</code> · <code>recherche_infructueuse</code>. « Contredit » n&#x27;est pas « réfuté ».</p>
+<h3 id="nature-de-l-enonce-colonne-nature">Nature de l&#x27;énoncé (colonne nature)</h3>
+<p><code>fait_atteste</code> · <code>transcription</code> · <code>recoupement</code> · <code>inference_historique</code> · <code>hypothese</code> · <code>rapport_tiers</code>. Il n&#x27;existe pas de nature « invention » dans la base : l&#x27;invention n&#x27;appartient qu&#x27;au roman.</p>
+<h3 id="confiance-colonne-confiance">Confiance (colonne confiance)</h3>
+<p><code>forte</code> · <code>moyenne</code> · <code>faible</code>, toujours justifiée (<code>justification_confiance</code>). Pas de pourcentage.</p>
+</main>
+<footer>Site généré le 23/11/2026 depuis la base du projet, qui fait foi. Rien n'y est présenté comme un fait sans son statut : voir <a href="methode.html#lire">comment lire ce site</a>.</footer>
+
+</body>
+</html>

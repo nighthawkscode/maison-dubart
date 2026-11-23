@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La méthode détaillée · La Maison Dubart, l'enquête</title>
+<link rel="stylesheet" href="style.css">
+<!-- Page générée par outils/site.py depuis base/ : ne pas modifier à la main. -->
+</head>
+<body>
+<div class="haut"><div class="int"><a class="titre" href="index.html">La Maison Dubart · l'enquête</a><nav><a href="index.html">Accueil</a><a href="arbre.html">Arbre</a><a href="personnes/index.html">Personnes</a><a href="assertions.html">Assertions</a><a href="sources.html">Sources</a><a href="recherches.html">Recherches</a><a href="journal.html">Journal</a><a href="documents.html">Documents de famille</a><a href="transcriptions/index.html">Transcriptions</a><a href="methode.html" class=actif>Méthode</a><a href="donnees.html">Données</a></nav></div></div>
+<main class="texte">
+<p class='aide'><a href='methode.html'>La méthode</a> · docs/METHODE.md</p><h2 id="methode-du-projet-genealogie-dubart">Méthode du projet généalogie DUBART</h2>
+<h3 id="1-les-couches">1. Les couches</h3>
+<div class='defile'><table><thead><tr><th>Couche</th><th>Où</th><th>Rôle</th><th>Qui écrit</th></tr></thead><tbody><tr><td>1. Arbre initial</td><td><code>sources/</code> (brut), <code>base/*_arbre.csv</code> (importé)</td><td>Ce qui a été transmis, erreurs comprises</td><td><code>outils/importer_arbre.py</code> uniquement</td></tr><tr><td>2. Enquête</td><td><code>base/</code> (autres CSV)</td><td>Assertions, preuves, recherches, corrections</td><td>archiviste-généalogiste, session principale</td></tr><tr><td>3. Validation</td><td><code>outils/valider.py</code>, <code>tests/</code>, <code>controles/</code></td><td>Règles automatiques et contrôle indépendant</td><td>validateur, agent contrôleur</td></tr><tr><td>4. Contexte</td><td><code>contexte/</code> + assertions historiques</td><td>L&#x27;époque, avec des liens explicites aux personnes</td><td>historien</td></tr><tr><td>5. Roman</td><td><code>dossier/saga/</code>, <code>roman/dependances.csv</code></td><td>Œuvre littéraire</td><td>romancier</td></tr></tbody></table></div>
+<p><strong>La base (<code>base/</code>) est la seule source de vérité.</strong> Les documents de <code>dossier/</code> (preuves.md, jeanne-augustine.md, zones-d-ombre.md, contexte-historique.md) et la page publiée sont des vues ou des archives : en cas de désaccord, la base fait foi. <code>zones-d-ombre.md</code> et <code>contexte-historique.md</code> sont en quarantaine (synthèses d&#x27;agents non contrôlées, enregistrées comme sources <code>synthese_agent</code>).</p>
+<h3 id="2-le-modele-de-donnees">2. Le modèle de données</h3>
+<p>Tous les fichiers sont des CSV UTF-8 (lisibles dans Excel ou Numbers). Le modèle est défini dans <code>outils/modele.py</code> ; <code>base/schema.sql</code> en est la traduction PostgreSQL (Supabase compris).</p>
+<div class='defile'><table><thead><tr><th>Table</th><th>Une ligne =</th><th>Points clés</th></tr></thead><tbody><tr><td><code>personnes</code> (+ <code>personnes_arbre</code>)</td><td>une personne</td><td>id stable (<code>P…</code> arbre, <code>PN…</code> ajoutées) ; nom de naissance</td></tr><tr><td><code>noms</code></td><td>un nom porté</td><td>naissance, adoption, mariage, variante graphique, surnom ; lié à l&#x27;assertion qui l&#x27;atteste</td></tr><tr><td><code>identifications</code></td><td>une identité possible</td><td><code>candidate</code> / <code>etablie</code> / <code>rejetee</code> + raison ; empêche les fusions hâtives</td></tr><tr><td><code>sources</code></td><td>un document</td><td>type, cote, vues, lien, image locale, primaire oui/non, <code>depend_de</code> (copies), <strong>consultation réelle</strong> (consultée / non consultée / inaccessible), date et auteur</td></tr><tr><td><code>assertions</code> (+ <code>assertions_arbre</code>)</td><td>un fait atomique</td><td>énoncé, statut, nature, confiance + justification, raisonnement, limite, autres hypothèses, <code>remplace</code>, auteur, date</td></tr><tr><td><code>assertion_personnes</code></td><td>un lien assertion ↔ personne</td><td>rôle : sujet, parent, conjoint, apparente, témoin, déclarant, mentionné, autre ; <code>relatif_a</code> = personne à laquelle le rôle se rapporte (parent <strong>de qui</strong>, conjoint <strong>de qui</strong> : obligatoire si l&#x27;assertion a plusieurs sujets) ; <code>lien</code> = parenté précise du rôle apparente (oncle, petit-gendre…), du point de vue de la personne liée. Les fiches ne déduisent la famille que de ces rôles (règle R14).</td></tr><tr><td><code>preuves</code></td><td>un lien assertion ↔ source</td><td><code>soutient</code> / <code>contredit</code> / <code>mentionne</code> ; extrait exact ; lecture incertaine</td></tr><tr><td><code>recherches</code></td><td>une recherche menée</td><td>question, sources consultées, résultat (y compris infructueuse ou inaccessible), conclusion, pistes</td></tr><tr><td><code>journal</code></td><td>une correction</td><td>avant, après, raison ; <strong>on ne supprime jamais</strong></td></tr><tr><td><code>documents_famille</code></td><td>un des 82 documents de l&#x27;arbre</td><td>récupéré ou non ; lien vers la source une fois consulté</td></tr><tr><td><code>roman/dependances</code></td><td>un passage du roman</td><td>assertion utilisée et usage (documenté, reconstitution, hypothèse narrative, invention)</td></tr></tbody></table></div>
+<p>Dates : texte ISO, éventuellement partiel (<code>1873</code>, <code>1873-09</code>) ou qualifié (<code>~1776</code> environ, <code>&lt;1847-03</code> avant, <code>&gt;1836</code> après). Une date inconnue reste vide.</p>
+<h3 id="3-statuts-nature-confiance">3. Statuts, nature, confiance</h3>
+<p>Voir <code>docs/GARDE-FOUS.md</code>. Correspondance avec l&#x27;ancien vocabulaire : LU → <code>verifie</code> + <code>fait_atteste</code>/<code>transcription</code> ; VÉRIFIÉ (source publiée) → selon que la page a vraiment été ouverte, <code>verifie</code> + <code>rapport_tiers</code> ou <code>non_verifie</code> ; DÉDUIT → <code>inference_historique</code> ; HYPOTHÈSE → <code>hypothese</code> ; INFIRMÉ → <code>contredit</code> ou <code>refute</code>.</p>
+<h3 id="4-les-agents">4. Les agents</h3>
+<div class='defile'><table><thead><tr><th>Agent</th><th>Fait</th><th>Ne fait pas</th></tr></thead><tbody><tr><td><code>genealogiste-archiviste</code></td><td>trouve et lit les originaux, écrit assertions, sources, recherches</td><td>ne touche pas à la couche 1 ; ne compte pas l&#x27;arbre comme preuve</td></tr><tr><td><code>historien-contexte</code></td><td>contexte sourcé, niveaux simultanéité / exposition / effet</td><td>pas de causalité sans document ; pas de détail sans source</td></tr><tr><td><code>controleur</code></td><td>met à l&#x27;épreuve, propose des reclassements dans <code>controles/</code></td><td>ne modifie pas la base ; n&#x27;est pas obligé de trancher</td></tr><tr><td><code>romancier-saga</code></td><td>écrit, déclare ses dépendances et ses inventions</td><td>n&#x27;écrit jamais dans <code>base/</code></td></tr></tbody></table></div>
+<h3 id="5-les-outils">5. Les outils</h3>
+<pre>python3 -I outils/importer_arbre.py        # réimporte l&#x27;arbre (couche 1) après un nouvel export Heredis
+python3 -I outils/valider.py --details      # contrôle les garde-fous
+python3 -I outils/fiche.py P5229            # fiche documentaire d&#x27;une personne
+python3 -I outils/fiche.py --toutes         # toutes les fiches dans fiches/
+python3 -I outils/impacts.py A0080          # ce qui dépend d&#x27;une assertion ou d&#x27;une personne
+python3 -I -m unittest discover -s tests -v # tests des garde-fous
+python3 -I outils/generer_schema_sql.py     # régénère base/schema.sql</pre>
+<h3 id="6-corriger-une-erreur">6. Corriger une erreur</h3>
+<ol><li>
+Ne pas effacer la ligne fautive. Changer son statut (<code>contredit</code>, <code>refute</code>, <code>non_resolu</code>…) ou créer une nouvelle assertion avec <code>remplace</code> = l&#x27;ancienne.
+</li><li>
+Ajouter la preuve contraire dans <code>preuves.csv</code> (rôle <code>contredit</code>).
+</li><li>
+Ajouter une entrée dans <code>journal.csv</code> (avant, après, raison).
+</li><li>
+Lancer <code>outils/impacts.py &lt;id&gt;</code> pour voir les fiches, identifications et passages du roman à réexaminer.
+</li><li>
+Lancer <code>outils/valider.py</code>. Une assertion de l&#x27;arbre ne se corrige jamais dans <code>*_arbre.csv</code> : on ajoute une preuve contraire et une entrée de journal (sa fiche l&#x27;affichera « contredit »).
+</li></ol>
+<h3 id="7-avant-d-ecrire-du-roman">7. Avant d&#x27;écrire du roman</h3>
+<ol><li>
+<code>outils/valider.py --details</code> : aucun avertissement R13 non traité sur les passages concernés.
+</li><li>
+Le contrôleur est passé sur les faits que le chapitre utilise.
+</li><li>
+Les choix narratifs sur les points non résolus (ex. qui est la mère de Jeanne) sont déclarés comme hypothèses narratives dans <code>roman/dependances.csv</code>.
+</li></ol>
+<h3 id="8-passage-futur-a-postgresql-supabase">8. Passage futur à PostgreSQL / Supabase</h3>
+<ol><li>
+Créer les tables : <code>psql &lt; base/schema.sql</code> (ou l&#x27;éditeur SQL de Supabase).
+</li><li>
+Importer dans l&#x27;ordre : personnes (<code>personnes_arbre.csv</code> puis <code>personnes.csv</code>), sources, assertions (<code>assertions_arbre.csv</code> puis <code>assertions.csv</code>), noms, identifications, assertion_personnes (les deux fichiers), preuves (les deux), recherches, recherche_assertions, journal, documents_famille, dependances. Commande : <code>\copy table from &#x27;fichier.csv&#x27; csv header</code>.
+</li><li>
+Les règles de <code>outils/valider.py</code> restent à exécuter (elles ne sont pas toutes exprimables en contraintes SQL) : il faudra alors le faire lire la base Postgres au lieu des CSV (seul <code>outils/base.py</code> est à adapter).
+</li></ol>
+<h3 id="9-limites-connues">9. Limites connues</h3>
+<ul><li>
+Les tests vérifient la <strong>forme</strong> (une source, un statut, un journal), pas que la source dit réellement ce qu&#x27;on lui fait dire : c&#x27;est le rôle du contrôleur et, en dernier ressort, d&#x27;un humain.
+</li><li>
+<code>consultation = consultee</code> repose sur la déclaration de celui qui saisit ; rien ne prouve techniquement qu&#x27;une page a été ouverte. Les outils web utilisés jusqu&#x27;ici renvoient des <strong>résumés</strong> de pages : une page lue ainsi est notée consultée avec cette réserve dans <code>note</code>.
+</li><li>
+La détection des homonymes est naïve (nom + prénoms identiques).
+</li><li>
+Les 82 documents de la famille ne sont pas encore récupérés.
+</li><li>
+Les faits historiques généraux utilisés par le roman ne sont pas encore vérifiés (7 avertissements R13 au 28/10/2026).
+</li><li>
+La page publiée « Concession 542 » n&#x27;est plus synchronisée avec la base ; elle sera régénérée depuis la base plus tard.
+</li></ul>
+</main>
+<footer>Site généré le 23/11/2026 depuis la base du projet, qui fait foi. Rien n'y est présenté comme un fait sans son statut : voir <a href="methode.html#lire">comment lire ce site</a>.</footer>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transcriptions — volet administratif (session du 02/11/2026) · La Maison Dubart, l'enquête</title>
+<link rel="stylesheet" href="../style.css">
+<!-- Page générée par outils/site.py depuis base/ : ne pas modifier à la main. -->
+</head>
+<body>
+<div class="haut"><div class="int"><a class="titre" href="../index.html">La Maison Dubart · l'enquête</a><nav><a href="../index.html">Accueil</a><a href="../arbre.html">Arbre</a><a href="../personnes/index.html">Personnes</a><a href="../assertions.html">Assertions</a><a href="../sources.html">Sources</a><a href="../recherches.html">Recherches</a><a href="../journal.html">Journal</a><a href="../documents.html">Documents de famille</a><a href="../transcriptions/index.html" class=actif>Transcriptions</a><a href="../methode.html">Méthode</a><a href="../donnees.html">Données</a></nav></div></div>
+<main class="texte">
+<p class='aide'><a href='index.html'>Toutes les transcriptions</a> · dossier de travail : recherches/generation-4/gibert-octavie-camille/camille/admin/transcriptions.md</p><h2 id="transcriptions-volet-administratif-session-du-02-11-2026">Transcriptions — volet administratif (session du 02/11/2026)</h2>
+<p>Aucun acte nouveau n&#x27;a été lu : les dépôts administratifs consultés sont soit inaccessibles, soit sans notice sur Gibert. Ce fichier consigne ce qui a été réellement ouvert.</p>
+<h3 id="t40-wikidata-q2934839-camille-melchior-gibert-entite-json">T40 — Wikidata Q2934839 (Camille-Melchior Gibert), entité JSON</h3>
+<p>URL : <a href="https://www.wikidata.org/wiki/Special:EntityData/Q2934839.json">https://www.wikidata.org/wiki/Special:EntityData/Q2934839.json</a> (ouvert par curl le 02/11/2026).<br>Déclarations utiles (valeurs brutes) :</p>
+<ul><li>
+P569 naissance : deux valeurs, <code>+1797-09-18</code> et <code>+1797-08-18</code> ; P19 lieu de naissance : Q2845754 = « ancien 3e arrondissement de Paris » (libellé fr vérifié via l&#x27;API Wikidata) ; P570 décès : <code>+1866-07-30</code> ; P20 lieu de décès : Q163948 (Paris).
+</li><li>
+Identifiants : BnF 16157946p ; IdRef 080742041 ; ISNI 0000000072439750 ; VIAF 20460380 ; Wellcome zam6wpgc ; Wikimedia Commons : portrait « Gibert, Camille Melchior (1797-1866) CIPN20083.jpg » (BIU Santé, 1935).
+</li><li>
+<strong>Aucun identifiant Léonore, aucune cote LH, aucun identifiant AP-HP ni Académie de médecine.</strong>
+</li></ul>
+<p>Remarque : Wikidata est un agrégat ; la double valeur de naissance reprend la divergence déjà connue (<a href="../assertions.html#A0126">A0126</a>).</p>
+<h3 id="t41-leonore-archives-nationales">T41 — Léonore (Archives nationales)</h3>
+<ul><li>
+<a href="https://www.leonore.archives-nationales.culture.gouv.fr/ui/">https://www.leonore.archives-nationales.culture.gouv.fr/ui/</a> : page d&#x27;application Angular chargée (HTTP 200, titre « Recherche - Base de données Léonore »), aucune donnée nominative dans le HTML.
+</li><li>
+Interrogation de l&#x27;API publique de recherche (<code>POST …/ui/api/v1/notice/search</code>) : <strong>HTTP 403 Forbidden</strong> (réponse JSON <code>{&quot;status&quot;:403,&quot;error&quot;:&quot;Forbidden&quot;,&quot;path&quot;:&quot;/ui/api/v1/notice/search&quot;}</code>), le 02/11/2026. Non contourné.
+</li><li>
+Jeu de données ouvert : recherche sur data.gouv.fr (API <code>datasets/?q=leonore</code>) : 0 résultat ; culture.data.gouv.fr : application JavaScript, rien d&#x27;exploitable.
+</li><li>
+Format de cote observé sur une autre fiche (AGORHA, dossier Langweil) : <code>19800035/&lt;carton&gt;/&lt;n°&gt;</code> pour les dossiers Léonore ; la cote « LH/… » citée dans la consigne n&#x27;apparaît donc pas pour tous. Cote de Gibert : <strong>inconnue</strong>.
+</li></ul>
+<h3 id="t42-academie-nationale-de-medecine">T42 — Académie nationale de médecine</h3>
+<p><a href="https://www.academie-medecine.fr/?s=Gibert">https://www.academie-medecine.fr/?s=Gibert</a> (HTTP 200) : 4 résultats, tous des articles du Bulletin récents (ex. séance du 21/10/2003, diabète) ; <strong>aucune notice de membre ni dossier historique Gibert</strong>.</p>
+<h3 id="t43-autres-depots">T43 — Autres dépôts</h3>
+<ul><li>
+FranceArchives (<code>/fr/search?q=Gibert Camille Melchior</code>) : réponse = redirection JavaScript « requires JS enabled and cookies » : inaccessible.
+</li><li>
+Geneanet (<code>/fonds/individus/?nom=Gibert&amp;prenom=Camille+Melchior</code>) : HTTP 403 : inaccessible.
+</li><li>
+APPL (appl-lachaise.net) : page d&#x27;accueil seule ouverte (HTTP 200), pas de recherche nominative sans navigateur.
+</li><li>
+Archives de Paris, page « Fichiers de l&#x27;état civil reconstitué » : HTTP 200, texte explicatif ; la recherche réclame un navigateur. Les images se téléchargent si l&#x27;on connaît les numéros (<code>/_recherche-images/show/&lt;fiche&gt;/image/&lt;image&gt;/&lt;vue&gt;</code>).
+</li><li>
+Sondage des registres d&#x27;inhumation de Montmartre (série voisine de <code>show/85547/image/80085</code>, Dec 1871 ; image = fiche − 5462) : fiches 85546 (oct. 1871 ?), 85530 (janv. 1871), 85520 (juin 1870 [?]) ; 85460-85490 : autres cimetières ou années, sans année visible sur le haut de page. <strong>L&#x27;inhumation d&#x27;août 1866 n&#x27;a pas été localisée</strong> ; sondage abandonné (temps) : piste à reprendre avec le moteur du site.
+</li></ul>
+</main>
+<footer>Site généré le 23/11/2026 depuis la base du projet, qui fait foi. Rien n'y est présenté comme un fait sans son statut : voir <a href="../methode.html#lire">comment lire ce site</a>.</footer>
+
+</body>
+</html>
