@@ -104,9 +104,11 @@ section { margin-block: clamp(2.5rem, 6vw, 5rem); }
 @media (max-width: 860px) {
   .nav, .entete .bouton-chercher .libelle, .entete .bouton-chercher kbd { display: none; }
   .entete .bouton-chercher { margin-left: auto; padding: .5rem; }
-  .barre-mobile { display: grid; grid-template-columns: repeat(4, 1fr); position: fixed; inset: auto 0 0 0; z-index: 40; background: var(--papier); border-top: 1px solid var(--filet); padding-bottom: env(safe-area-inset-bottom); }
+  .barre-mobile { display: grid; grid-template-columns: repeat(5, 1fr); position: fixed; inset: auto 0 0 0; z-index: 40; background: var(--papier); border-top: 1px solid var(--filet); padding-bottom: env(safe-area-inset-bottom); }
   .barre-mobile a, .barre-mobile button { display: flex; flex-direction: column; align-items: center; gap: .15rem; padding: .55rem 0 .5rem; font: 500 .7rem var(--sans); color: var(--encre-2); text-decoration: none; background: none; border: 0; cursor: pointer; }
-  .barre-mobile .icone { width: 1.3rem; height: 1.3rem; }
+  .barre-mobile .icone { width: 1.45rem; height: 1.45rem; }
+  .barre-mobile a, .barre-mobile button { font-size: .74rem; }
+  .filtres select, .filtres input[type=search] { font-size: 16px; }
   .barre-mobile [aria-current="page"] { color: var(--garance); }
   body { padding-bottom: 4.2rem; }
 }
@@ -553,3 +555,16 @@ dl.champs ul { margin: 0; padding-left: 1.1rem; }
 .carte-a .m { display: block; font: .76rem/1.25 var(--sans); color: var(--encre-2); margin-top: .15rem; }
 .carte-a.vide { background: transparent; border-style: dashed; border-left-width: 1px; color: var(--sepia); }
 .carte-a.vide b { font-style: italic; font-weight: 400; }
+
+/* Plus (mobile) */
+.feuille .secondaires { margin: 1.2rem 0 .4rem; display: flex; gap: .5rem; flex-wrap: wrap; }
+.feuille .secondaires .puce { display: inline-flex; align-items: center; gap: .4rem; font-size: .9rem; padding: .5rem .9rem; }
+.feuille [data-historique] { margin-top: 1.2rem; }
+.feuille .historique a { display: flex; justify-content: space-between; gap: 1rem; padding: .55rem 0; border-bottom: 1px solid var(--filet); text-decoration: none; font-size: 1rem; }
+.feuille nav a[aria-current="page"] { color: var(--garance); }
+
+/* Jamais de débordement horizontal (sinon le navigateur mobile dézoome la page) */
+html, body { overflow-x: clip; }
+html.recherche-ouverte, html.recherche-ouverte body { overflow: hidden; }
+.recherche, .recherche .resultats { overflow-x: hidden; }
+.recherche li a .l, .recherche li a .s, .bulle, .fiche, .questions, .evenements, .vie { overflow-wrap: anywhere; }

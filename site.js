@@ -47,12 +47,13 @@
   const voile = $("#voile");
   function ouvrirFeuille(id) {
     const f = document.getElementById(id); if (!f) return;
-    if (id === "feuille-historique") {
-      const h = lireHist().filter(x => x.u !== ici.u).slice(0, 15);
-      $("nav", f).innerHTML = h.length ? h.map(x => `<a href="${R}${esc(x.u)}"><span>${esc(x.t)}</span><span class="mono discret">${quand(x.ts)}</span></a>`).join("")
-        : '<p class="discret">Rien pour l’instant : les pages que vous ouvrez s’ajouteront ici (sur cet appareil seulement).</p>';
+    const zh = $("[data-historique]", f);
+    if (zh) {
+      const h = lireHist().filter(x => x.u !== ici.u).slice(0, 6);
+      zh.hidden = !h.length;
+      $("nav", zh).innerHTML = h.map(x => `<a href="${R}${esc(x.u)}"><span>${esc(x.t)}</span><span class="mono discret">${quand(x.ts)}</span></a>`).join("");
     }
-    f.hidden = false; voile.hidden = false; f.querySelector("a, button")?.focus();
+    f.hidden = false; voile.hidden = false; f.querySelector("a, button")?.focus({ preventScroll: true });
   }
   function fermerFeuilles() { $$(".feuille").forEach(f => f.hidden = true); if (voile) voile.hidden = true; }
   $$("[data-feuille]").forEach(b => b.addEventListener("click", () => ouvrirFeuille(b.dataset.feuille)));
@@ -82,7 +83,7 @@
   const boite = $("#recherche");
   const champ = boite && $("input", boite);
   const zone = boite && $(".resultats", boite);
-  let dernierFocus = null, selection = -1;
+  let dernierFocus = null, selection = -1, positionAvant = 0;
   const TYPES = [["personne", "Personnes"], ["lieu", "Lieux"], ["metier", "Métiers"], ["annee", "Années"], ["archive", "Archives"], ["enigme", "Questions ouvertes"], ["fait", "Dans les informations"], ["page", "Pages"]];
   function distance(a, b) {
     if (Math.abs(a.length - b.length) > 2) return 9;
@@ -149,12 +150,18 @@
   }
   function ouvrirRecherche(q) {
     if (!boite) return;
-    dernierFocus = document.activeElement; boite.hidden = false; document.body.style.overflow = "hidden";
+    dernierFocus = document.activeElement; positionAvant = window.scrollY; boite.hidden = false; document.documentElement.classList.add("recherche-ouverte");
     champ.value = q || ""; champ.focus();
     zone.innerHTML = '<div class="enveloppe"><p class="aide">Chargement de l’index…</p></div>';
     charger().then(() => chercher(champ.value)).catch(() => zone.innerHTML = '<div class="enveloppe"><p class="aide">L’index de recherche n’a pas pu être chargé.</p></div>');
   }
-  function fermerRecherche() { if (!boite || boite.hidden) return; boite.hidden = true; document.body.style.overflow = ""; dernierFocus && dernierFocus.focus(); }
+  function fermerRecherche() {
+    if (!boite || boite.hidden) return;
+    champ.blur();
+    boite.hidden = true; document.documentElement.classList.remove("recherche-ouverte");
+    window.scrollTo(0, positionAvant);
+    dernierFocus && dernierFocus.focus({ preventScroll: true });
+  }
   if (boite) {
     let t; champ.addEventListener("input", () => { clearTimeout(t); t = setTimeout(() => INDEX && chercher(champ.value), 90); });
     $(".fermer", boite).addEventListener("click", fermerRecherche);
