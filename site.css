@@ -625,3 +625,26 @@ html.recherche-ouverte, html.recherche-ouverte body { overflow: hidden; }
 .org-equipe .noeud ul { font-size: .92rem; }
 @media (max-width: 1100px) { .org-equipe { grid-template-columns: repeat(3, minmax(0, 1fr)); } .org-equipe::before, .org-equipe > .noeud::before { display: none; } }
 @media (max-width: 700px) { .org-equipe { grid-template-columns: 1fr; } }
+
+/* --- L'enquête : lire les informations, questions dépliables */
+.lire-grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); gap: 1rem; }
+.lire-bloc { border: 1px solid var(--filet); background: var(--ivoire); padding: 1rem 1.15rem 1.1rem; }
+.lire-bloc.large { grid-column: 1 / -1; }
+.lire-bloc h3 { font-size: 1.15rem; margin-bottom: .5rem; }
+.lire-bloc p, .lire-bloc li { font-size: .98rem; line-height: 1.5; }
+.lire-bloc p { margin: 0 0 .4rem; }
+.lire-bloc ul { margin: 0; padding-left: 1.1rem; }
+.liste-cert { list-style: none; padding: 0 !important; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); gap: .5rem 1.5rem; }
+.liste-cert li { display: flex; gap: .6rem; align-items: baseline; }
+.liste-cert .cert { min-width: 9.5rem; }
+details.groupe-enigmes { border-bottom: 1px solid var(--filet); }
+details.groupe-enigmes:first-of-type { border-top: 1px solid var(--encre); }
+details.groupe-enigmes > summary { cursor: pointer; list-style: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .8rem; padding: .9rem 0; font: 400 1.25rem var(--serif); }
+details.groupe-enigmes > summary::-webkit-details-marker { display: none; }
+details.groupe-enigmes > summary::before { content: "+"; font: 500 1rem var(--sans); color: var(--garance); width: 1rem; }
+details.groupe-enigmes[open] > summary::before { content: "−"; }
+details.groupe-enigmes > summary .nb { margin-left: auto; font: .82rem var(--sans); color: var(--sepia); }
+details.groupe-enigmes > summary:hover { color: var(--garance); }
+details.groupe-enigmes .enigmes { margin-bottom: 1rem; }
+
+section[id] { scroll-margin-top: calc(var(--haut) + 3.6rem); }

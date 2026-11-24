@@ -263,6 +263,13 @@
     app();
   });
 
+  /* ---------- Questions ouvertes : tout déplier / tout replier ---------- */
+  $$("[data-deplier]").forEach(b => b.addEventListener("click", () => {
+    const ouvrir = b.getAttribute("aria-pressed") !== "true";
+    $$("details.groupe-enigmes").forEach(dd => { dd.open = ouvrir; });
+    b.setAttribute("aria-pressed", ouvrir); b.textContent = ouvrir ? "Tout replier" : "Tout déplier";
+  }));
+
   /* ---------- Cartes de branche : filtrer et descendre à la liste ---------- */
   $$("[data-branche-lien]").forEach(a => a.addEventListener("click", e => {
     const s = $("select[name=branche]"); if (!s) return;
