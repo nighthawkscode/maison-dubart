@@ -57,6 +57,7 @@
   }
   function fermerFeuilles() { $$(".feuille").forEach(f => f.hidden = true); if (voile) voile.hidden = true; }
   $$("[data-feuille]").forEach(b => b.addEventListener("click", () => ouvrirFeuille(b.dataset.feuille)));
+  $$(".fermer-tiroir").forEach(b => b.addEventListener("click", fermerFeuilles));
   voile && voile.addEventListener("click", () => { fermerFeuilles(); fermerBulle(); });
 
   /* ---------- Index de recherche (chargé à la demande) ---------- */

@@ -104,7 +104,7 @@ section { margin-block: clamp(2.5rem, 6vw, 5rem); }
 @media (max-width: 860px) {
   .nav, .entete .bouton-chercher .libelle, .entete .bouton-chercher kbd { display: none; }
   .entete .bouton-chercher { margin-left: auto; padding: .5rem; }
-  .barre-mobile { display: grid; grid-template-columns: repeat(5, 1fr); position: fixed; inset: auto 0 0 0; z-index: 40; background: var(--papier); border-top: 1px solid var(--filet); padding-bottom: env(safe-area-inset-bottom); }
+  .barre-mobile { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); position: fixed; inset: auto 0 0 0; z-index: 40; background: var(--papier); border-top: 1px solid var(--filet); padding-bottom: env(safe-area-inset-bottom); }
   .barre-mobile a, .barre-mobile button { display: flex; flex-direction: column; align-items: center; gap: .15rem; padding: .55rem 0 .5rem; font: 500 .7rem var(--sans); color: var(--encre-2); text-decoration: none; background: none; border: 0; cursor: pointer; }
   .barre-mobile .icone { width: 1.45rem; height: 1.45rem; }
   .barre-mobile a, .barre-mobile button { font-size: .74rem; }
@@ -586,3 +586,16 @@ html.recherche-ouverte, html.recherche-ouverte body { overflow: hidden; }
 .porte .cta span { transition: transform .2s; }
 @media (max-width: 860px) { .portes { gap: .7rem; } .porte, .porte + .porte, .porte:nth-child(2n+1) { padding: 1rem 1rem 1.1rem; border: 1px solid var(--filet); } .porte b { font-size: 1.5rem; } .porte .cta { font-size: .82rem; padding: .5rem .85rem; } }
 @media (max-width: 420px) { .portes { grid-template-columns: 1fr; } }
+
+/* Menu burger dans l'en-tête (mobile) : toutes les rubriques ; la barre du bas garde les quatre principales sur une ligne */
+.burger { display: none; background: none; border: 0; color: var(--encre); padding: .4rem; margin-left: -.4rem; cursor: pointer; }
+.burger .icone { width: 1.5rem; height: 1.5rem; }
+@media (max-width: 860px) {
+  .burger { display: inline-flex; }
+  .entete .enveloppe { gap: .6rem; }
+  .barre-mobile a { white-space: nowrap; overflow: hidden; text-overflow: clip; }
+}
+.feuille.tiroir { inset: 0 auto 0 0; width: min(88vw, 22rem); max-height: none; height: 100%; border-radius: 0; border-top: 0; border-right: 1px solid var(--filet); padding-top: 1rem; box-shadow: 12px 0 40px #0003; }
+.tete-tiroir { display: flex; justify-content: space-between; align-items: center; margin-bottom: .4rem; }
+.tete-tiroir h2 { margin: 0; }
+.fermer-tiroir { background: none; border: 0; font-size: 2rem; line-height: 1; color: var(--sepia); cursor: pointer; padding: 0 .3rem; }
