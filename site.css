@@ -599,3 +599,29 @@ html.recherche-ouverte, html.recherche-ouverte body { overflow: hidden; }
 .tete-tiroir { display: flex; justify-content: space-between; align-items: center; margin-bottom: .4rem; }
 .tete-tiroir h2 { margin: 0; }
 .fermer-tiroir { background: none; border: 0; font-size: 2rem; line-height: 1; color: var(--sepia); cursor: pointer; padding: 0 .3rem; }
+
+/* --- Méthode : organigramme (page L'enquête) */
+.organigramme { display: grid; justify-items: center; padding: 1.2rem 0 .5rem; }
+.noeud { width: min(100%, 31rem); padding: 1rem 1.2rem 1.1rem; background: var(--ivoire); border: 1px solid var(--filet); border-top: 4px solid var(--sepia); }
+.noeud.humain { border-top-color: var(--garance); background: var(--papier); }
+.noeud .poste { display: block; font: 500 .68rem var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--garance); }
+.noeud b { display: block; font: 500 1.35rem/1.15 var(--serif); margin: .15rem 0; }
+.noeud .modele { display: block; font: .78rem var(--mono); color: var(--sepia); }
+.noeud ul { margin: .6rem 0 0; padding-left: 1.05rem; font-size: .98rem; line-height: 1.45; }
+.noeud li { margin: .2rem 0; }
+.org-lien { position: relative; display: flex; justify-content: center; width: min(100%, 44rem); padding: 1.6rem 0; }
+.org-lien::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; border-left: 2px solid var(--garance); }
+.org-lien::after { content: "⇅"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.org-co { position: relative; z-index: 1; width: min(100%, 38rem); background: var(--papier); border: 1.5px solid var(--garance); border-radius: 6px; padding: .9rem 1.2rem 1rem; }
+.org-co-titre { font: 500 .72rem var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--garance); text-align: center; margin-bottom: .4rem; }
+.org-co-corps p { margin: .35rem 0; font-size: .98rem; line-height: 1.45; }
+.org-fleche { position: relative; height: 2.6rem; width: 1px; background: var(--sepia); }
+.org-fleche span { position: absolute; left: .7rem; top: 50%; transform: translateY(-50%); white-space: nowrap; font: italic .88rem var(--serif); color: var(--sepia); }
+.org-equipe { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .9rem; width: 100%; position: relative; padding-top: 1.5rem; }
+.org-equipe::before { content: ""; position: absolute; top: 0; left: 10%; right: 10%; border-top: 1px solid var(--sepia); }
+.org-equipe > .noeud { position: relative; width: 100%; }
+.org-equipe > .noeud::before { content: ""; position: absolute; top: calc(-1.5rem - 4px); left: 50%; height: 1.5rem; border-left: 1px solid var(--sepia); }
+.org-equipe .noeud b { font-size: 1.15rem; }
+.org-equipe .noeud ul { font-size: .92rem; }
+@media (max-width: 1100px) { .org-equipe { grid-template-columns: repeat(3, minmax(0, 1fr)); } .org-equipe::before, .org-equipe > .noeud::before { display: none; } }
+@media (max-width: 700px) { .org-equipe { grid-template-columns: 1fr; } }
