@@ -514,7 +514,7 @@ dl.champs ul { margin: 0; padding-left: 1.1rem; }
 .eventail a:focus { outline: none; }
 .eventail a:focus-visible .seg { stroke: var(--encre); stroke-width: 3; stroke-dasharray: none; }
 .eventail text { font-family: var(--serif); fill: var(--encre); pointer-events: none; }
-.eventail .t1 { font-size: 19px; fill: var(--papier); } .eventail .t1.nom { font-variant: small-caps; }
+.eventail .t1 { font-size: 17px; fill: var(--papier); } .eventail .t1.petit { font-size: 13px; } .eventail .t1.nom { font-variant: small-caps; }
 .eventail .b-rene .dt, .eventail > a .dt { fill: var(--filet); }
 .eventail .t2 { font-size: 17px; } .eventail .t3 { font-size: 15px; } .eventail .t4 { font-size: 13px; } .eventail .t5 { font-size: 12px; } .eventail .t6 { font-size: 10.5px; }
 .eventail .nom { font-variant: small-caps; font-weight: 600; }
