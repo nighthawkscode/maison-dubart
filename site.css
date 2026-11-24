@@ -648,3 +648,6 @@ details.groupe-enigmes > summary:hover { color: var(--garance); }
 details.groupe-enigmes .enigmes { margin-bottom: 1rem; }
 
 section[id] { scroll-margin-top: calc(var(--haut) + 3.6rem); }
+
+.lien-arbre { margin: 1rem 0 0; }
+.lien-arbre .puce { display: inline-block; font-size: .92rem; padding: .5rem 1rem; }
