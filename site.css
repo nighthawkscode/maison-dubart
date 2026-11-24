@@ -568,3 +568,21 @@ html, body { overflow-x: clip; }
 html.recherche-ouverte, html.recherche-ouverte body { overflow: hidden; }
 .recherche, .recherche .resultats { overflow-x: hidden; }
 .recherche li a .l, .recherche li a .s, .bulle, .fiche, .questions, .evenements, .vie { overflow-wrap: anywhere; }
+
+/* Portes d'entrée de l'accueil : clairement cliquables */
+.tete-portes { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem 1.2rem; margin-bottom: 1rem; }
+.tete-portes h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); }
+.tete-portes p { margin: 0; color: var(--sepia); font: 1rem var(--sans); }
+.portes { gap: 1rem; border-top: 0; }
+.porte, .porte + .porte { padding: 1.3rem 1.3rem 1.4rem; border: 1px solid var(--filet); background: var(--ivoire); border-radius: 4px; transition: border-color .2s, background .2s, transform .2s, box-shadow .2s; }
+.porte:last-child { border-right: 1px solid var(--filet); }
+.porte .mono { margin-top: 0; color: var(--garance); font-size: .78rem; }
+.porte b { font-size: 1.9rem; }
+.porte .cta { margin-top: auto; align-self: flex-start; display: inline-flex; gap: .5rem; align-items: center; font: 500 .92rem var(--sans); background: var(--encre); color: var(--papier); border-radius: 999px; padding: .6rem 1.1rem; transition: background .2s; }
+.porte:hover, .porte:focus-visible { border-color: var(--garance); background: var(--papier); box-shadow: 0 10px 28px #1c0b0818; transform: translateY(-2px); }
+.porte:hover b { color: var(--encre); }
+.porte:hover .cta, .porte:focus-visible .cta { background: var(--garance); }
+.porte:hover .cta span { transform: translateX(3px); }
+.porte .cta span { transition: transform .2s; }
+@media (max-width: 860px) { .portes { gap: .7rem; } .porte, .porte + .porte, .porte:nth-child(2n+1) { padding: 1rem 1rem 1.1rem; border: 1px solid var(--filet); } .porte b { font-size: 1.5rem; } .porte .cta { font-size: .82rem; padding: .5rem .85rem; } }
+@media (max-width: 420px) { .portes { grid-template-columns: 1fr; } }
