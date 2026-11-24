@@ -64,6 +64,8 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .discret { color: var(--sepia); }
 .petit { font-size: .9rem; }
 .chapo { font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.45; color: var(--encre-2); max-width: 38rem; }
+h1 + .chapo, h1 + p, h1 + .dates-vie { margin-top: clamp(.9rem, 2vw, 1.5rem); }
+.surtitre + h1 { margin-top: .5rem; }
 em, i { font-style: italic; }
 hr { border: 0; border-top: 1px solid var(--filet); margin: 2.5rem 0; }
 
@@ -386,7 +388,10 @@ details.dossier[open] > summary::after { content: "Fermer −"; }
 .frise text { font: 11px var(--sans); fill: var(--sepia); }
 .frise .regime rect { fill: var(--papier); }
 .frise .regime:nth-child(2n) rect { fill: var(--ivoire-2); }
-.frise .regime text { font: 600 10px var(--sans); letter-spacing: .08em; text-transform: uppercase; fill: var(--garance); }
+.frise .regime-nom { font: 600 11.5px var(--sans); letter-spacing: .02em; fill: var(--garance); }
+.frise .regime-an { font: 400 10.5px var(--mono); fill: var(--sepia); }
+.frise a:hover .regime-nom { text-decoration: underline; }
+.frise .repere { stroke: var(--garance); stroke-width: 1; }
 .frise a .barre { fill: var(--encre); }
 .frise a .barre.n { fill: none; stroke: var(--encre); stroke-dasharray: 3 3; }
 .frise a text.nom { font: 12px var(--serif); fill: var(--encre); }
@@ -493,3 +498,58 @@ dl.champs ul { margin: 0; padding-left: 1.1rem; }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
 @media print { .entete, .barre-mobile, .sommaire, .fil, .continuer, .pied { display: none; } body { background: #fff; } }
+
+/* --- Arbre : éventail et tableau par générations */
+:root { --b-dubart: #EBD3C2; --b-rignault: #DCE0CB; --b-baron: #D3DCE4; --b-rene: #1C0B08; }
+@media (prefers-color-scheme: dark) { :root { --b-dubart: #4a2c22; --b-rignault: #353a2a; --b-baron: #2a3540; --b-rene: #F2EADB; } }
+.eventail-defile { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.eventail { display: block; width: 100%; min-width: 46rem; height: auto; margin: 0 auto; max-width: 74rem; }
+.eventail .seg { stroke: var(--papier); stroke-width: 2; transition: fill .2s; }
+.eventail .b-dubart .seg { fill: var(--b-dubart); } .eventail .b-rignault .seg { fill: var(--b-rignault); } .eventail .b-baron .seg { fill: var(--b-baron); }
+.eventail .seg.centre { fill: var(--b-rene); }
+.eventail .seg.l-n { stroke: var(--sepia); stroke-width: 1.2; stroke-dasharray: 3 3; }
+.eventail .seg.l-x { stroke: var(--garance); stroke-width: 1.8; stroke-dasharray: 2 3; }
+.eventail .seg.inconnu { fill: transparent; stroke: var(--filet); stroke-dasharray: 2 4; }
+.eventail a:hover .seg, .eventail a:focus .seg { fill: var(--garance); }
+.eventail a:focus { outline: none; }
+.eventail a:focus-visible .seg { stroke: var(--encre); stroke-width: 3; stroke-dasharray: none; }
+.eventail text { font-family: var(--serif); fill: var(--encre); pointer-events: none; }
+.eventail .t1 { font-size: 19px; fill: var(--papier); } .eventail .t1.nom { font-variant: small-caps; }
+.eventail .b-rene .dt, .eventail > a .dt { fill: var(--filet); }
+.eventail .t2 { font-size: 17px; } .eventail .t3 { font-size: 15px; } .eventail .t4 { font-size: 13px; } .eventail .t5 { font-size: 12px; } .eventail .t6 { font-size: 10.5px; }
+.eventail .nom { font-variant: small-caps; font-weight: 600; }
+.eventail .dt { font: 10.5px var(--mono); fill: var(--sepia); }
+.eventail .cote-g { font: 500 11px var(--sans); letter-spacing: .14em; text-transform: uppercase; fill: var(--garance); }
+.legende-arbre { justify-content: center; margin-top: 1rem; }
+.legende-arbre span { display: inline-flex; align-items: center; gap: .45rem; }
+.pastille { display: inline-block; width: .9rem; height: .9rem; border-radius: 2px; }
+.pastille.b-dubart { background: var(--b-dubart); } .pastille.b-rignault { background: var(--b-rignault); } .pastille.b-baron { background: var(--b-baron); }
+.trait { display: inline-block; width: 1.6rem; height: 0; border-top: 2px solid var(--ok); }
+.trait.l-n { border-top: 2px dashed var(--sepia); } .trait.l-x { border-top: 2px dotted var(--garance); }
+
+.tableau-defile { overflow-x: auto; padding: .5rem 0 1rem; -webkit-overflow-scrolling: touch; }
+.tableau-arbre { display: grid; grid-template-columns: repeat(5, minmax(12.5rem, 1fr)); gap: 0 2.4rem; min-width: 70rem; }
+.col-g { display: flex; flex-direction: column; }
+.col-g h3 { font: 500 .7rem var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--garance); margin: 0 0 .8rem; height: 1rem; }
+.col-g .pile { flex: 1; display: flex; flex-direction: column; min-height: 62rem; }
+.bloc { flex: 1; display: flex; flex-direction: column; justify-content: center; position: relative; }
+.bloc.paire > * { margin: auto 0; }
+.bloc.paire::before { content: ""; position: absolute; left: -1.2rem; top: 25%; bottom: 25%; border-left: 1.5px solid var(--sepia); }
+.bloc.paire::after { content: ""; position: absolute; left: -2.4rem; width: 1.2rem; top: 50%; border-top: 1.5px solid var(--sepia); }
+.carte-a { position: relative; display: block; padding: .45rem .6rem .5rem; background: var(--ivoire); border: 1px solid var(--filet); border-left: 4px solid var(--filet); text-decoration: none; line-height: 1.22; scroll-margin: 8rem; }
+.carte-a::before { content: ""; position: absolute; left: calc(-1.2rem - 5px); width: 1.2rem; top: 50%; border-top: 1.5px solid var(--sepia); }
+.col-g:first-child .carte-a::before { display: none; }
+.carte-a.l-n::before { border-top-style: dashed; } .carte-a.l-x::before { border-top: 1.5px dotted var(--garance); }
+.carte-a.b-dubart { border-left-color: #c79a84; } .carte-a.b-rignault { border-left-color: #a9b18a; } .carte-a.b-baron { border-left-color: #93a7b8; }
+.carte-a.b-rene { background: var(--encre); color: var(--papier); border-color: var(--encre); }
+.carte-a.b-rene .d, .carte-a.b-rene .sosa, .carte-a.b-rene .m { color: var(--filet); }
+.carte-a:hover { border-color: var(--garance); }
+.carte-a:target { box-shadow: 0 0 0 3px var(--garance); }
+.carte-a img { float: right; width: 2.4rem; height: 3rem; object-fit: cover; margin: 0 0 .2rem .5rem; }
+.carte-a .sosa { display: block; font: .66rem var(--mono); color: var(--sepia); }
+.carte-a b { display: block; font: 500 .98rem/1.2 var(--serif); }
+.carte-a .nom { font-variant: small-caps; letter-spacing: .02em; }
+.carte-a .d { display: block; font: .74rem var(--mono); color: var(--sepia); }
+.carte-a .m { display: block; font: .76rem/1.25 var(--sans); color: var(--encre-2); margin-top: .15rem; }
+.carte-a.vide { background: transparent; border-style: dashed; border-left-width: 1px; color: var(--sepia); }
+.carte-a.vide b { font-style: italic; font-weight: 400; }

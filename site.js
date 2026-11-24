@@ -11,8 +11,13 @@
   const CLE = "dubart-historique";
 
   /* ---------- Historique local et fil d'exploration ---------- */
-  function lireHist() { try { return JSON.parse(localStorage.getItem(CLE)) || []; } catch (e) { return []; } }
-  const ici = { u: location.pathname.replace(/^.*?(maison-dubart\/|\/)/, "") || "index.html", t: document.body.dataset.titre || document.title.split(" · ")[0], k: document.body.dataset.genre || "", ts: Date.now() };
+  function lireHist() {
+    try { return (JSON.parse(localStorage.getItem(CLE)) || []).map(h => ({ ...h, u: String(h.u).replace(/^\/?maison-dubart\//, "") })).filter(h => h.u && !h.u.startsWith("/")); }
+    catch (e) { return []; }
+  }
+  const racineAbs = new URL(R || "./", location.href).pathname;
+  const chemin = location.pathname.startsWith(racineAbs) ? location.pathname.slice(racineAbs.length) : location.pathname.replace(/^\//, "");
+  const ici = { u: (chemin || "index.html").replace(/\/$/, "/index.html"), t: document.body.dataset.titre || document.title.split(" · ")[0], k: document.body.dataset.genre || "", ts: Date.now() };
   const ancien = lireHist();
   try {
     const nouv = [ici, ...ancien.filter(h => h.u !== ici.u)].slice(0, 40);
@@ -234,7 +239,7 @@
       $$(".lettre", cible).forEach(l => { let s = l.nextElementSibling, vis = false; while (s && !s.classList.contains("lettre")) { if (!s.hidden) vis = true; s = s.nextElementSibling; } l.hidden = !vis; });
       if (compte) compte.textContent = n + " / " + items.length;
       const p = new URLSearchParams(); if (q && q.value) p.set("q", q.value); Object.entries(etat).forEach(([k, val]) => val && p.set(k, val));
-      history.replaceState(null, "", p.toString() ? "?" + p : location.pathname);
+      history.replaceState(null, "", (p.toString() ? "?" + p : location.pathname) + location.hash);
     }
     q && q.addEventListener("input", app);
     selects.forEach(s => s.addEventListener("change", () => { etat[s.name] = s.value; app(); }));
@@ -249,6 +254,17 @@
     puces.forEach(b => { if (init.get(b.dataset.k) === b.dataset.v) { b.setAttribute("aria-pressed", "true"); etat[b.dataset.k] = b.dataset.v; } });
     app();
   });
+
+  /* ---------- Cartes de branche : filtrer et descendre à la liste ---------- */
+  $$("[data-branche-lien]").forEach(a => a.addEventListener("click", e => {
+    const s = $("select[name=branche]"); if (!s) return;
+    e.preventDefault(); s.value = a.dataset.brancheLien; s.dispatchEvent(new Event("change"));
+    $("#liste-personnes").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  }));
+  if (location.hash === "#liste-personnes" && $("#liste-personnes")) setTimeout(() => $("#liste-personnes").scrollIntoView(), 50);
+
+  /* ---------- Éventail : centré sur René quand il déborde (mobile) ---------- */
+  $$(".eventail-defile").forEach(d => { d.scrollLeft = (d.scrollWidth - d.clientWidth) / 2; });
 
   /* ---------- Visionneuse d'archives ---------- */
   const grande = $(".planche figure img");
