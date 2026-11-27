@@ -118,7 +118,29 @@ La page publiée « Concession 542 » n&#x27;est plus synchronisée avec la base
 <strong>Le contrôleur Opus</strong> reste réservé à la vérification avant le roman ou après une série importante ; les tâches mécaniques peuvent aller à Haiku.
 </li><li>
 Noter dans le bilan de chaque recherche la méthode choisie et, quand c&#x27;est mesurable, son coût ; corriger les repères de ce tableau quand une mesure les contredit.
-</li></ul></div>
+</li></ul>
+<h3 id="12-aucune-trouvaille-hors-de-la-base-regle-de-jessica-du-27-11-2026">12. Aucune trouvaille hors de la base (règle de Jessica du 27/11/2026)</h3>
+<p>Cas d&#x27;école : le 26/11/2026, la capture de L&#x27;Employé du 25/05/1903 (« M. Léon Dubart, membre du Conseil syndical, a perdu son père le 10 mai », piste PM-057) et la relecture de l&#x27;acte d&#x27;Épernay et du dossier Léonore d&#x27;Augustin Beaud (PM-060 à PM-066) sont restées dans <code>recherches/pistes-mistral/</code> sans entrer en base, ou y sont entrées en « non vérifié » sans être relues. Le site et les fiches ont continué à dire « supposition » pour des faits établis.</p>
+<p>Règles, sans exception :</p>
+<ol><li>
+<strong>Une trouvaille = une écriture en base dans le même tour.</strong> Toute pièce lue (image, capture, PDF, page web), tout fait, tout négatif est enregistré (source, assertion, preuve, recherche, journal) <strong>avant</strong> de passer à autre chose. Pas de « je l&#x27;intégrerai plus tard » : un fichier déposé dans le dépôt sans trace en base est une perte.
+</li><li>
+<strong>Toute pièce enregistrée dans le dépôt est citée en base.</strong> Une image, une capture ou un PDF déposé sous <code>recherches/</code> ou <code>documents-famille-robert/</code> figure dans <code>sources.csv</code> (<code>fichier_local</code>), ou dans une transcription elle-même citée par une source. Les recadrages et les planches de repérage sont rattachés à la source de la pièce, au même titre.
+</li><li>
+<strong>Toute transcription est citée par sa source</strong> (<code>sources.csv</code>, colonne <code>transcription</code>).
+</li><li>
+<strong>Tout fichier de propositions est intégré</strong> par <code>outils/integrer_propositions.py</code>, ou porte en tête « Intégré le … » avec les ids créés et le n° de journal.
+</li><li>
+<strong>Toute piste Mistral PM-xxx reçoit une ligne dans une section « Retour »</strong> du fichier : intégrée (ids), rejetée (motif) ou à reprendre (ce qui manque). Une piste ajoutée après un retour (append-only) exige une nouvelle section « Retour ».
+</li><li>
+<strong>Ce qu&#x27;un agent dit avoir lu en image n&#x27;est vérifié qu&#x27;une fois relu par la session principale.</strong> Dès qu&#x27;une identification ou un fait important repose sur une source « non_consultee » ou lue par un agent, la session principale relit la pièce (recadrage sur les lignes utiles), transcrit, puis relève ou maintient le statut. Ne pas laisser « non vérifié » ce qui peut l&#x27;être en quelques appels.
+</li><li>
+<strong>Une conclusion qui change propage ses effets dans le même tour</strong> : limites des assertions qui la citent, hypothèses rendues caduques (<a href="assertions.html#A0921">A0921</a> → vérifiée), biographie à réécrire (À revoir), site à republier.
+</li><li>
+<strong>Contrôle automatique</strong> : <code>python3 -I outils/trouvailles.py</code> liste ce qui manque (T1 pistes sans retour, T2 pièces non citées, T3 propositions non intégrées, T5 transcriptions non citées ; T4 rappelle les identifications qui reposent sur une lecture d&#x27;agent). <code>valider.py</code> en fait des <strong>erreurs (R20)</strong>, donc <code>maj.py</code>, le hook de fin de tour et le pre-commit refusent de conclure tant qu&#x27;une trouvaille nouvelle n&#x27;est pas en base. L&#x27;arriéré connu au 27/11/2026 est listé dans <code>outils/trouvailles_arriere.txt</code> (avertissements) : on le résorbe, on n&#x27;y ajoute jamais rien pour faire taire une erreur.
+</li><li>
+<strong>En fin de série</strong> : <code>outils/trouvailles.py</code> à zéro pour T1, T3 et les nouveautés de T2 et T5, puis <code>maj.py</code>, commit et <code>git push</code>.
+</li></ol></div>
 </main>
 <footer class="pied"><div class="enveloppe">
 <div><h2>La Maison Dubart</h2><p>Ce site est le dossier documentaire du roman <i>La Maison Dubart</i>. Il prolonge la généalogie de Jacques et Sylvette Robert, reprise par Jessica Robert avec Claude Code et des agents (archiviste, historien, contrôleur, romancier). La base fait foi : rien n'y est présenté comme un fait sans son statut.</p><p class="mono">Généré le 27/11/2026 · polices Source Serif 4, IBM Plex Mono, Inter Tight (SIL Open Font License)</p></div>
