@@ -103,7 +103,22 @@ La page publiée « Concession 542 » n&#x27;est plus synchronisée avec la base
 <strong>Consigner les résultats ouverts et non ouverts</strong> dans la recherche (champ « sources consultées ») : une recherche qui a laissé des résultats non ouverts reste « partielle », jamais « infructueuse ».
 </li><li>
 <strong>Les sites qui bloquent les outils</strong> (Gallica, Archives de Paris par API) : le dire tout de suite et demander à Jessica de chercher dans son navigateur, avec l&#x27;URL exacte, plutôt que de s&#x27;en contenter.
-</li></ol></div>
+</li></ol>
+<h3 id="11-choisir-la-methode-le-meilleur-rapport-tokens-resultat-regle-de-jessica-du-27-11-2026">11. Choisir la méthode : le meilleur rapport tokens / résultat (règle de Jessica du 27/11/2026)</h3>
+<p>Avant chaque recherche, choisir <strong>sans attendre qu&#x27;on le demande</strong> la méthode la moins coûteuse en tokens qui peut donner le résultat attendu, et ne monter d&#x27;un cran que si le cran inférieur échoue. Les repères de coût viennent de mesures réelles (<code>controles/2026-11-27-mesure-atelier-jeanne-augustine.md</code>).</p>
+<div class='defile'><table><thead><tr><th>Cran</th><th>Quand</th><th>Méthode</th><th>Coût repère</th></tr></thead><tbody><tr><td>0</td><td>Toujours d&#x27;abord</td><td>Ce que contiennent déjà la base, l&#x27;arbre, le rapport Heredis, <code>recherches/</code> (fiche, <code>grep</code>)</td><td>quasi nul</td></tr><tr><td>1</td><td>Un nom de personne est en jeu et la période touche un index ouvert (légionnaires 1802-1977 ; décès depuis 1970)</td><td>Atelier en mode léger : brief avec <code>&quot;seulement_donnees&quot;: true</code>, <code>indices</code> (lieux, années) et <code>prenoms</code> ; <code>lancer</code>, <code>travailler</code>, puis lecture du haut de <code>a-juger</code> par la session elle-même</td><td>1 à 2 min ; ≈ 5 000 tokens de lecture, aucun sous-agent</td></tr><tr><td>2</td><td>La cote ou l&#x27;URL de la pièce est connue et l&#x27;image ou le texte est accessible (IIIF des AD, PDF, texte OCR)</td><td>Session principale, directement : téléchargement, planche réduite puis recadrage, <code>chercher_pdf.swift</code>, <code>grep</code></td><td>≈ 1 500 à 3 000 tokens par image réduite</td></tr><tr><td>3</td><td>Il faut repérer où chercher (catalogues, inventaires, cotes, sources multiples sur le web)</td><td>Un sous-agent <code>genealogiste-archiviste</code> (Sonnet), méthode classique, brief précis, <strong>un seul à la fois</strong></td><td>≈ 140 000 tokens de contexte, ≈ 0,9 M d&#x27;équivalents (lot A)</td></tr><tr><td>4</td><td>Un nom rare à balayer dans un corpus imprimé <strong>dont on a vérifié</strong> qu&#x27;il est en texte intégral sur Internet Archive (répertoires coloniaux, JO, almanachs nationaux, annuaires étrangers)</td><td>Atelier complet (plein texte) piloté par un sous-agent Sonnet</td><td>≈ 0,6 à 0,7 M d&#x27;équivalents (lot B) ; inutile si le corpus ne contient pas la série</td></tr><tr><td>—</td><td>Site qui bloque les robots (Gallica, Geneanet, Léonore, Numelyo, AD63…)</td><td>URL exacte à Jessica</td><td>nul</td></tr></tbody></table></div>
+<p>Règles d&#x27;économie :</p>
+<ul><li>
+<strong>Pas de sous-agent pour ce qui tient en quelques appels</strong> : lancer un agent coûte d&#x27;emblée des dizaines de milliers de tokens de contexte. À l&#x27;inverse, une tâche de plus d&#x27;une vingtaine d&#x27;appels de recherche va à un sous-agent Sonnet : la session principale (Opus) coûte plus cher au token.
+</li><li>
+<strong>Vérifier le terrain avant d&#x27;investir</strong> : une requête de comptage (nombre de résultats, présence de la série dans le corpus) avant de lancer un balayage.
+</li><li>
+<strong>Lire petit</strong> : planches réduites et haut de page, puis recadrage sur la seule ligne utile ; transcrire une seule fois.
+</li><li>
+<strong>Le contrôleur Opus</strong> reste réservé à la vérification avant le roman ou après une série importante ; les tâches mécaniques peuvent aller à Haiku.
+</li><li>
+Noter dans le bilan de chaque recherche la méthode choisie et, quand c&#x27;est mesurable, son coût ; corriger les repères de ce tableau quand une mesure les contredit.
+</li></ul></div>
 </main>
 <footer class="pied"><div class="enveloppe">
 <div><h2>La Maison Dubart</h2><p>Ce site est le dossier documentaire du roman <i>La Maison Dubart</i>. Il prolonge la généalogie de Jacques et Sylvette Robert, reprise par Jessica Robert avec Claude Code et des agents (archiviste, historien, contrôleur, romancier). La base fait foi : rien n'y est présenté comme un fait sans son statut.</p><p class="mono">Généré le 27/11/2026 · polices Source Serif 4, IBM Plex Mono, Inter Tight (SIL Open Font License)</p></div>
